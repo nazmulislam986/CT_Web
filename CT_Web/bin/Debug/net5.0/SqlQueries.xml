@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<AddMarketInfo>
+		<![CDATA[
+			INSERT INTO ct_db.market (M_ID, M_Date, M_Amount, M_Insrt_Person)
+			VALUES (@M_ID, @M_Date, @M_Amount, @M_Insrt_Person);
+		]]>
+	</AddMarketInfo>
+	<GetMarketData>
+		<![CDATA[
+			SELECT * FROM ct_db.market;
+		]]>
+	</GetMarketData>
+	<GetMarketIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.market WHERE M_ID = @M_ID;
+		]]>
+	</GetMarketIDData>
+	<UpdateMarketData>
+		<![CDATA[
+			UPDATE ct_db.market SET M_Amount = @M_Amount, M_Updt_Person = @M_Updt_Person WHERE M_ID = @M_ID;
+		]]>
+	</UpdateMarketData>
+	<DeleteMarketData>
+		<![CDATA[
+			DELETE FROM ct_db.market WHERE M_ID = @M_ID;
+		]]>
+	</DeleteMarketData>
+</Queries>
