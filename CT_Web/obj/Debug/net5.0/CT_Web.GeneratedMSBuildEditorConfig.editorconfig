@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = CT_Web
-build_property.ProjectDir = D:\MVS_2019_Project\CT_Web\CT_Web\
+build_property.ProjectDir = D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\

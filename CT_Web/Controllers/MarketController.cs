@@ -24,7 +24,7 @@ namespace CT_Web.Controllers
             _logger = logger;
         }
 
-        // GET: api/<MarketMemoController>     [Work-------------------------------Done---------------------------]
+        // GET: api/<MarketMemoController>
         [HttpGet]
         [Route("GetMarketRecord")]
         public async Task<IActionResult> ReadMarketRecord()
@@ -49,7 +49,7 @@ namespace CT_Web.Controllers
             return Ok(new { IsSuccess = respose.IsSuccess, Message = respose.Message, Data = respose.MarketDataList });
         }
 
-        // GET api/<MarketMemoController>/5    [Work----------------------------------Start-----------------------]
+        // GET api/<MarketMemoController>/5
         [HttpGet]
         [Route("GetMarketIDRecord")]
         public async Task<IActionResult> ReadMarketIDRecord(Market market)
@@ -74,7 +74,7 @@ namespace CT_Web.Controllers
             return Ok(new { IsSuccess = respose.IsSuccess, Message = respose.Message, Data = respose.MarketDataList });
         }
 
-        // POST api/<MarketMemoController>     [Work---------------------------------Done---------------------------]
+        // POST api/<MarketMemoController>
         [HttpPost]
         [Route("CreateMarketRecord")]
         public async Task<IActionResult> CreateMarketRecord(Market market)
@@ -99,7 +99,7 @@ namespace CT_Web.Controllers
             return Ok(new { IsSuccess = respose.IsSuccess, Message = respose.Message });
         }
 
-        // PUT api/<MarketMemoController>/5    [Work---------------------------------Done---------------------------]
+        // PUT api/<MarketMemoController>/5
         [HttpPut]
         [Route("UpdateMarketRecord")]
         public async Task<IActionResult> UpdateMarketRecord(Market market)
@@ -124,7 +124,7 @@ namespace CT_Web.Controllers
             return Ok(new { IsSuccess = respose.IsSuccess, Message = respose.Message });
         }
 
-        // DELETE api/<MarketMemoController>/5 [Work---------------------------------Done---------------------------]
+        // DELETE api/<MarketMemoController>/5
         [HttpDelete]
         [Route("DeleteMarketRecord")]
         public async Task<IActionResult> DeleteMarketRecord(Market market)

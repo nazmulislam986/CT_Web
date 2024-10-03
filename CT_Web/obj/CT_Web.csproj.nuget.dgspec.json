@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\MVS_2019_Project\\CT_Web\\CT_Web\\CT_Web.csproj": {}
+    "D:\\MVS_2019_Project\\TeamProject\\CT_Web\\CT_Web\\CT_Web\\CT_Web.csproj": {}
   },
   "projects": {
-    "D:\\MVS_2019_Project\\CT_Web\\CT_Web\\CT_Web.csproj": {
+    "D:\\MVS_2019_Project\\TeamProject\\CT_Web\\CT_Web\\CT_Web\\CT_Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MVS_2019_Project\\CT_Web\\CT_Web\\CT_Web.csproj",
+        "projectUniqueName": "D:\\MVS_2019_Project\\TeamProject\\CT_Web\\CT_Web\\CT_Web\\CT_Web.csproj",
         "projectName": "CT_Web",
-        "projectPath": "D:\\MVS_2019_Project\\CT_Web\\CT_Web\\CT_Web.csproj",
+        "projectPath": "D:\\MVS_2019_Project\\TeamProject\\CT_Web\\CT_Web\\CT_Web\\CT_Web.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\MVS_2019_Project\\CT_Web\\CT_Web\\obj\\",
+        "outputPath": "D:\\MVS_2019_Project\\TeamProject\\CT_Web\\CT_Web\\CT_Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

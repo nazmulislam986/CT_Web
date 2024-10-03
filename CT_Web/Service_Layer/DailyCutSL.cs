@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CT_Web.Service_Layer
 {
-    public class DailyCutSL
+    public class DailyCutSL : IDailyCutSL
     {
     }
 }

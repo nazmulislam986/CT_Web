@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CT_Web.Repository_Layer
 {
-    public class GivenRL
+    public class GivenRL : IGivenRL
     {
     }
 }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CT_Web.Service_Layer
 {
-    public class InstallmentSL
+    public class InstallmentSL : IInstallmentSL
     {
     }
 }

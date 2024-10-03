@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace CT_Web.Service_Layer
 {
-    public class MonthlyTakeSL
+    public class MonthlyTakeSL : IMonthlyTakeSL
     {
     }
 }

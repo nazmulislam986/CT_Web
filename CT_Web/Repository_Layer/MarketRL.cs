@@ -33,9 +33,9 @@ namespace CT_Web.Repository_Layer
                 {
                     await _sqlConn.OpenAsync();
                 }
-                using (MySqlCommand cmd = new MySqlCommand(SqlQueries.AddMarket, _sqlConn)) //SqlQueries.AddMarket, _sqlConn || "sp_marketSync", _sqlConn
+                using (MySqlCommand cmd = new MySqlCommand(SqlQueries.AddMarket, _sqlConn))
                 {
-                    cmd.CommandType = System.Data.CommandType.Text; //System.Data.CommandType.Text || System.Data.CommandType.StoredProcedure
+                    cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandTimeout = 180;
                     cmd.Parameters.AddWithValue("@M_ID", market.M_ID);
                     cmd.Parameters.AddWithValue("@M_Date", market.M_Date);

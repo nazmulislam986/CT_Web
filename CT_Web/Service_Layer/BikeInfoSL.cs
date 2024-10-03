@@ -17,25 +17,25 @@ namespace CT_Web.Service_Layer
             _bikeInfoRL = bikeInfoRL;
             _logger = logger;
         }
-        public Task<BikeInfo> ICreateBikeInfoRecordSL(BikeInfo bikeInfo)
+        public async Task<BikeInfo> ICreateBikeInfoRecordSL(BikeInfo bikeInfo)
         {
-            throw new NotImplementedException();
+            return await _bikeInfoRL.ICreateBikeInfoRecordRL(bikeInfo);
         }
-        public Task<BikeInfo> IDeleteBikeInfoRecordSL(BikeInfo bikeInfo)
+        public async Task<BikeInfo> IDeleteBikeInfoRecordSL(BikeInfo bikeInfo)
         {
-            throw new NotImplementedException();
+            return await _bikeInfoRL.IDeleteBikeInfoRecordRL(bikeInfo);
         }
-        public Task<BikeInfo> IReadBikeInfoIDRecordSL(BikeInfo bikeInfo)
+        public async Task<BikeInfo> IReadBikeInfoIDRecordSL(BikeInfo bikeInfo)
         {
-            throw new NotImplementedException();
+            return await _bikeInfoRL.IReadBikeInfoIDRecordRL(bikeInfo);
         }
-        public Task<BikeInfo> IReadBikeInfoRecordSL()
+        public async Task<BikeInfo> IReadBikeInfoRecordSL()
         {
-            throw new NotImplementedException();
+            return await _bikeInfoRL.IReadBikeInfoRecordRL();
         }
-        public Task<BikeInfo> IUpdateBikeInfoRecordSL(BikeInfo bikeInfo)
+        public async Task<BikeInfo> IUpdateBikeInfoRecordSL(BikeInfo bikeInfo)
         {
-            throw new NotImplementedException();
+            return await _bikeInfoRL.IUpdateBikeInfoRecordRL(bikeInfo);
         }
     }
 }
