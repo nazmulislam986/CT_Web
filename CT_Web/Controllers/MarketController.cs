@@ -50,7 +50,7 @@ namespace CT_Web.Controllers
         }
 
         // GET api/<MarketMemoController>/5
-        [HttpGet]
+        [HttpPost]
         [Route("GetMarketIDRecord")]
         public async Task<IActionResult> ReadMarketIDRecord(Market market)
         {

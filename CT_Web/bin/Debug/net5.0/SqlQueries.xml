@@ -6,7 +6,7 @@
 	<AddBikeInfo>
 		<![CDATA[
 			INSERT INTO ct_db.bikeinfo (B_ID, B_Chng_Date, B_KM_ODO, B_Mobile_Go, B_Next_ODO, B_Insrt_Person)
-			VALUES(?,?,?,?,?,?);
+			VALUES(@B_ID, @B_Chng_Date, @B_KM_ODO, @B_Mobile_Go, @B_Next_ODO, @B_Insrt_Person);
 		]]>
 	</AddBikeInfo>
 	<GetBikeData>
@@ -32,8 +32,8 @@
 	</UpdateBikeData>
 	<DeleteBikeData>
 		<![CDATA[
-			DELETE FROM ct_db.market 
-			WHERE M_ID = @M_ID;
+			DELETE FROM ct_db.bikeinfo
+			WHERE B_ID = @B_ID;
 		]]>
 	</DeleteBikeData>
 

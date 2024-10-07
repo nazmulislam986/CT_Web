@@ -87,13 +87,15 @@ namespace CT_Web.Repository_Layer
                             respMarket.MarketDataList = new List<Market>();
                             while (await dataReader.ReadAsync())
                             {
-                                Market getData = new Market();
-                                getData.M_ID = (string)(dataReader["M_ID"] != DBNull.Value ? dataReader["M_ID"] : null);
-                                getData.M_Date = (DateTime)(dataReader["M_Date"] != DBNull.Value ? Convert.ToDateTime(dataReader["M_Date"]) : (DateTime?)null);
-                                getData.M_Amount = (float)(dataReader["M_Amount"] != DBNull.Value ? dataReader["M_Amount"] : 0);
-                                getData.M_Insrt_Person = (string)(dataReader["M_Insrt_Person"] != DBNull.Value ? dataReader["M_Insrt_Person"] : null);
-                                getData.M_Updt_Person = (string)(dataReader["M_Updt_Person"] != DBNull.Value ? dataReader["M_Updt_Person"] : null);
-                                getData.M_Del_Person = (string)(dataReader["M_Del_Person"] != DBNull.Value ? dataReader["M_Del_Person"] : null);
+                                Market getData = new Market()
+                                {
+                                    M_ID = dataReader["M_ID"] as string,
+                                    M_Date = (DateTime)(dataReader["M_Date"] as DateTime?),
+                                    M_Amount = dataReader["M_Amount"] as float? ?? 0,
+                                    M_Insrt_Person = dataReader["M_Insrt_Person"] as string,
+                                    M_Updt_Person = dataReader["M_Updt_Person"] as string,
+                                    M_Del_Person = dataReader["M_Del_Person"] as string
+                                };
                                 respMarket.MarketDataList.Add(getData);
                             }
                         }
@@ -134,20 +136,24 @@ namespace CT_Web.Repository_Layer
                 {
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandTimeout = 180;
+                    cmd.Parameters.AddWithValue("@M_ID", market.M_ID);
+                    cmd.Parameters.AddWithValue("@M_Amount", market.M_Amount);
                     using (MySqlDataReader dataReader = await cmd.ExecuteReaderAsync())
                     {
                         if (dataReader.HasRows)
                         {
                             respMarket.MarketDataList = new List<Market>();
-                            while (await dataReader.ReadAsync())
+                            if (await dataReader.ReadAsync())
                             {
-                                Market getData = new Market();
-                                getData.M_ID = (string)(dataReader["M_ID"] != DBNull.Value ? dataReader["M_ID"] : null);
-                                getData.M_Date = (DateTime)(dataReader["M_Date"] != DBNull.Value ? Convert.ToDateTime(dataReader["M_Date"]) : (DateTime?)null);
-                                getData.M_Amount = (float)(dataReader["M_Amount"] != DBNull.Value ? dataReader["M_Amount"] : 0);
-                                getData.M_Insrt_Person = (string)(dataReader["M_Insrt_Person"] != DBNull.Value ? dataReader["M_Insrt_Person"] : null);
-                                getData.M_Updt_Person = (string)(dataReader["M_Updt_Person"] != DBNull.Value ? dataReader["M_Updt_Person"] : null);
-                                getData.M_Del_Person = (string)(dataReader["M_Del_Person"] != DBNull.Value ? dataReader["M_Del_Person"] : null);
+                                Market getData = new Market()
+                                {
+                                    M_ID = dataReader["M_ID"] as string,
+                                    M_Date = (DateTime)(dataReader["M_Date"] as DateTime?),
+                                    M_Amount = dataReader["M_Amount"] as float? ?? 0,
+                                    M_Insrt_Person = dataReader["M_Insrt_Person"] as string,
+                                    M_Updt_Person = dataReader["M_Updt_Person"] as string,
+                                    M_Del_Person = dataReader["M_Del_Person"] as string
+                                };
                                 respMarket.MarketDataList.Add(getData);
                             }
                         }
@@ -163,7 +169,7 @@ namespace CT_Web.Repository_Layer
             {
                 respMarket.IsSuccess = false;
                 respMarket.Message = ex.Message;
-                _logger.LogError($"Update Market Record Error Message : {ex.Message}");
+                _logger.LogError($"Update Market ID Record Error Message : {ex.Message}");
             }
             finally
             {
@@ -246,7 +252,7 @@ namespace CT_Web.Repository_Layer
             {
                 respMarket.IsSuccess = false;
                 respMarket.Message = ex.Message;
-                _logger.LogError($"Update Market Record Error Message : {ex.Message}");
+                _logger.LogError($"Delete Market Record Error Message : {ex.Message}");
             }
             finally
             {
