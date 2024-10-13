@@ -153,7 +153,7 @@
 			WHERE C_ID = @C_ID;
 		]]>
 	</DeleteDailyCutData>
-	<!--////////////////////////// All Daily Saving Info Querys Details //////////////////////////////////////////--> 
+	<!--////////////////////////// All Daily Saving Info Querys Details //////////////////////////////////////////-->
 	<AddDailySavingInfo>
 		<![CDATA[
 			INSERT INTO ct_db.dailysaving (DS_ID, DS_Date, DS_FPAmount, DS_SPAmount, DS_TPAmount, NotTaken, DS_Data, DS_InBankDate, DS_Insrt_Person)

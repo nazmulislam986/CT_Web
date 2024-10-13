@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 
 namespace CT_Web.Common_Utility
 {
     public class SqlQueries
     {
         public static IConfiguration _configuration = new ConfigurationBuilder().AddXmlFile("SqlQueries.xml", true, true).Build();
+
         public static string AddBike { get { return _configuration["AddBikeInfo"]; } }
         public static string GetBike { get { return _configuration["GetBikeData"]; } }
         public static string GetBikeID { get { return _configuration["GetBikeIDData"]; } }

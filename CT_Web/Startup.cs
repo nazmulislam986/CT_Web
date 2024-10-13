@@ -28,50 +28,35 @@ namespace CT_Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
             services.AddScoped<IBikeInfoSL, BikeInfoSL>();
             services.AddScoped<IBikeInfoRL, BikeInfoRL>();
-
             services.AddScoped<IDailyAntSL, DailyAntSL>();
             services.AddScoped<IDailyAntRL, DailyAntRL>();
-
             services.AddScoped<IDailyCutSL, DailyCutSL>();
             services.AddScoped<IDailyCutRL, DailyCutRL>();
-
             services.AddScoped<IDailySavingSL, DailySavingSL>();
             services.AddScoped<IDailySavingRL, DailySavingRL>();
-
             services.AddScoped<IDailySL, DailySL>();
             services.AddScoped<IDailyRL, DailyRL>();
-
             services.AddScoped<IGivenSL, GivenSL>();
             services.AddScoped<IGivenRL, GivenRL>();
-
             services.AddScoped<IImagesSL, ImagesSL>();
             services.AddScoped<IImagesRL, ImagesRL>();
-
             services.AddScoped<IInstallmentSL, InstallmentSL>();
             services.AddScoped<IInstallmentRL, InstallmentRL>();
-
             services.AddScoped<IMarketMemoSL, MarketMemoSL>();
             services.AddScoped<IMarketMemoRL, MarketMemoRL>();
-
             services.AddScoped<IMarketSL, MarketSL>();
             services.AddScoped<IMarketRL, MarketRL>();
-
             services.AddScoped<IMonthlyTakeSL, MonthlyTakeSL>();
             services.AddScoped<IMonthlyTakeRL, MonthlyTakeRL>();
-
             services.AddScoped<ISavingSL, SavingSL>();
             services.AddScoped<ISavingRL, SavingRL>();
-
             services.AddScoped<ITariffAmtSL, TariffAmtSL>();
             services.AddScoped<ITariffAmtRL, TariffAmtRL>();
-
             services.AddScoped<ITekenSL, TekenSL>();
             services.AddScoped<ITekenRL, TekenRL>();
-
             services.AddScoped<IUnratedSL, UnratedSL>();
             services.AddScoped<IUnratedRL, UnratedRL>();
             services.AddSwaggerGen(c =>
