@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<AddTariffAmtInfo>
+		<![CDATA[
+			INSERT INTO ct_db.tariffamt (InExpense, Expense_Amount, Expense_To, ThroughBy_Expense, Expense_Date, Remarks_Expense, EDT_V, EDT_V_Date, DDT_V_Date, E_Insrt_Person)
+			VALUES (@InExpense, @Expense_Amount, @Expense_To, @ThroughBy_Expense, @Expense_Date, @Remarks_Expense, @EDT_V, @EDT_V_Date, @DDT_V_Date, @E_Insrt_Person);
+		]]>
+	</AddTariffAmtInfo>
+	<GetTariffAmtData>
+		<![CDATA[
+			SELECT * FROM ct_db.tariffamt;
+		]]>
+	</GetTariffAmtData>
+	<GetTariffAmtIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.tariffamt
+			WHERE InExpense = @InExpense;
+		]]>
+	</GetTariffAmtIDData>
+	<UpdateTariffAmtData>
+		<![CDATA[
+			UPDATE ct_db.tariffamt
+			SET InExpense = @InExpense,
+				Expense_Amount = @Expense_Amount,
+				Expense_To = @Expense_To,
+				ThroughBy_Expense = @ThroughBy_Expense,
+				Expense_Date = @Expense_Date,
+				Remarks_Expense = @Remarks_Expense,
+				EDT_V = @EDT_V,
+				EDT_V_Date = @EDT_V_Date,
+				DDT_V_Date = @DDT_V_Date,
+				E_Insrt_Person = @E_Insrt_Person,
+				E_Updt_Person = @E_Updt_Person,
+				E_Del_Person = @E_Del_Person
+			WHERE InExpense = @InExpense;
+		]]>
+	</UpdateTariffAmtData>
+	<DeleteTariffAmtData>
+		<![CDATA[
+			DELETE FROM ct_db.tariffamt
+			WHERE InExpense = @InExpense;
+		]]>
+	</DeleteTariffAmtData>
+</Queries>

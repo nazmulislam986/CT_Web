@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<AddInstallmentInfo>
+		<![CDATA[
+			INSERT INTO ct_db.installment (I_ID, I_Date, Take_Total, Take_Anot, Take_Mine, Take_Data, InsPerMonth, PerMonthPay, InsPay, InsPay_Date, I_Insrt_Person)
+			VALUES (@I_ID, @I_Date, @Take_Total, @Take_Anot, @Take_Mine, @Take_Data, @InsPerMonth, @PerMonthPay, @InsPay, @InsPay_Date, @I_Insrt_Person;
+		]]>
+	</AddInstallmentInfo>
+	<GetInstallmentData>
+		<![CDATA[
+			SELECT * FROM ct_db.installment;
+		]]>
+	</GetInstallmentData>
+	<GetInstallmentIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.installment
+			WHERE I_ID = @I_ID;
+		]]>
+	</GetInstallmentIDData>
+	<UpdateInstallmentData>
+		<![CDATA[
+			UPDATE ct_db.installment
+			SET I_Date = @I_Date,
+				Take_Total = @Take_Total,
+				Take_Anot = @Take_Anot,
+				Take_Mine = @Take_Mine,
+				Take_Data = @Take_Data,
+				InsPerMonth = @InsPerMonth,
+				PerMonthPay = @PerMonthPay,
+				InsPay = @InsPay,
+				InsPay_Date = @InsPay_Date,
+				I_Insrt_Person = @I_Insrt_Person,
+				I_Updt_Person  = @I_Updt_Person, 
+				I_Del_Person = @I_Del_Person
+			WHERE I_ID = @I_ID;
+		]]>
+	</UpdateInstallmentData>
+	<DeleteInstallmentData>
+		<![CDATA[
+			DELETE FROM ct_db.installment
+			WHERE B_ID = @B_ID;
+		]]>
+	</DeleteInstallmentData>
+</Queries>

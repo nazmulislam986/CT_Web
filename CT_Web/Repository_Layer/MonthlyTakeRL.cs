@@ -12,14 +12,14 @@ namespace CT_Web.Repository_Layer
 {
     public class MonthlyTakeRL : IMonthlyTakeRL
     {
-        public readonly IConfiguration _configuration;
+        public readonly IConfiguration _configurationMonthlyTake;
         public readonly MySqlConnection _sqlConn;
         public readonly ILogger<MonthlyTakeRL> _logger;
-        public MonthlyTakeRL(IConfiguration configuration, ILogger<MonthlyTakeRL> logger)
+        public MonthlyTakeRL(IConfiguration configurationMonthlyTake, ILogger<MonthlyTakeRL> logger)
         {
-            _configuration = configuration;
+            _configurationMonthlyTake = configurationMonthlyTake;
             _logger = logger;
-            _sqlConn = new MySqlConnection(_configuration["ConnectionStrings:connMySql"]);
+            _sqlConn = new MySqlConnection(_configurationMonthlyTake["ConnectionStrings:connMySql"]);
         }
 
         public async Task<MonthlyTake> ICreateMonthlyTakeRecordRL(MonthlyTake monthlyTake)

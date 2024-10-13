@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<AddGivenInfo>
+		<![CDATA[
+			INSERT INTO ct_db.given (InGiven, Total_Given, Given_To, ThroughBy_Given, Given_Date, Remarks_Given, GDT_V, GDT_V_Date, DDT_V_Date, G_Insrt_Person)
+			VALUES (@InGiven, @Total_Given, @Given_To, @ThroughBy_Given, @Given_Date, @Remarks_Given, @GDT_V, @GDT_V_Date, @DDT_V_Date, @G_Insrt_Person);
+		]]>
+	</AddGivenInfo>
+	<GetGivenData>
+		<![CDATA[
+			SELECT * FROM ct_db.given;
+		]]>
+	</GetGivenData>
+	<GetGivenIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.given
+			WHERE InGiven = @InGiven;
+		]]>
+	</GetGivenIDData>
+	<UpdateGivenData>
+		<![CDATA[
+			UPDATE ct_db.given
+			SET 
+				Total_Given = @Total_Given,
+				Given_To = @Given_To,
+				ThroughBy_Given = @ThroughBy_Given,
+				Given_Date = @Given_Date,
+				Remarks_Given = @Remarks_Given,				
+				GDT_V_Date = @GDT_V_Date,
+				DDT_V_Date = @DDT_V_Date,
+				G_Updt_Person = @G_Updt_Person
+			WHERE InGiven = @InGiven;
+		]]>
+	</UpdateGivenData>
+	<DeleteGivenData>
+		<![CDATA[
+			UPDATE ct_db.given
+			SET GDT_V = @GDT_V,
+				GDT_V_Date = @GDT_V_Date,
+				DDT_V_Date = @DDT_V_Date,
+				G_Del_Person = @G_Del_Person
+			WHERE InGiven = @InGiven;
+		]]>
+	</DeleteGivenData>
+	<DeleteResonGivenData>
+		<![CDATA[		
+			DELETE FROM ct_db.given
+			WHERE InGiven = @InGiven;
+		]]>
+	</DeleteResonGivenData>
+</Queries>

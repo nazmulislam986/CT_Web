@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<AddDailyAntInfo>
+		<![CDATA[		
+			INSERT INTO ct_db.dailyant (DA_ID, DA_Date, DA_FPAmount, DA_SPAmount, NotTaken, DA_Data, TakenDate, DA_Insrt_Person)
+			VALUES (@DA_ID, @DA_Date, @DA_FPAmount, @DA_SPAmount, @NotTaken, @DA_Data, @TakenDate, @DA_Insrt_Person);
+		]]>
+	</AddDailyAntInfo>
+	<GetDailyAntData>
+		<![CDATA[
+			SELECT * FROM ct_db.dailyant;
+		]]>
+	</GetDailyAntData>
+	<GetDailyAntIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.dailyant 
+			WHERE DA_ID = @DA_ID;
+		]]>
+	</GetDailyAntIDData>
+	<UpdateDailyAntData>
+		<![CDATA[
+			UPDATE ct_db.dailyant
+			SET DA_FPAmount,
+				DA_SPAmount,
+				NotTaken,				
+				DA_Updt_Person
+			WHERE DA_ID = @DA_ID;
+		]]>
+	</UpdateDailyAntData>
+	<DeleteDailyAntData>
+		<![CDATA[
+			UPDATE ct_db.dailyant
+			SET DA_Data,
+				TakenDate,
+				DA_Del_Person
+			WHERE DA_ID = @DA_ID;
+		]]>
+	</DeleteDailyAntData>
+	<DeleteResonDailyData>
+		<![CDATA[
+			DELETE FROM ct_db.dailyant
+			WHERE DA_ID = @DA_ID;
+		]]>
+	</DeleteResonDailyData>
+</Queries>

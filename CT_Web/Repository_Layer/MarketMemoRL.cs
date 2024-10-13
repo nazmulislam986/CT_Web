@@ -14,14 +14,14 @@ namespace CT_Web.Repository_Layer
 {
     public class MarketMemoRL : IMarketMemoRL
     {
-        public readonly IConfiguration _configuration;
+        public readonly IConfiguration _configurationMarketMemo;
         public readonly MySqlConnection _sqlConn;
         public readonly ILogger<MarketMemoRL> _logger;
-        public MarketMemoRL(IConfiguration configuration, ILogger<MarketMemoRL> logger)
+        public MarketMemoRL(IConfiguration configurationMarketMemo, ILogger<MarketMemoRL> logger)
         {
-            _configuration = configuration;
+            _configurationMarketMemo = configurationMarketMemo;
             _logger = logger;
-            _sqlConn = new MySqlConnection(_configuration["ConnectionStrings:connMySql"]);
+            _sqlConn = new MySqlConnection(_configurationMarketMemo["ConnectionStrings:connMySql"]);
         }
         public async Task<MarketMemos> ICreateMarketMemoRecordRL(MarketMemos marketMemos)
         {

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<AddTakenInfo>
+		<![CDATA[
+			INSERT INTO ct_db.teken (InTake, Total_Take, Take_To, ThroughBy_Take, Take_Date, Remarks_Take, TDT_V, TDT_V_Date, DDT_V_Date, T_Insrt_Person)
+			VALUES (@InTake, @Total_Take, @Take_To, @ThroughBy_Take, @Take_Date, @Remarks_Take, @TDT_V, @TDT_V_Date, @DDT_V_Date, @T_Insrt_Person);
+		]]>
+	</AddTakenInfo>
+	<GetTakenData>
+		<![CDATA[
+			SELECT * FROM ct_db.teken;
+		]]>
+	</GetTakenData>
+	<GetTakenIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.teken
+			WHERE InTake = @InTake;
+		]]>
+	</GetTakenIDData>
+	<UpdateTakenData>
+		<![CDATA[
+			UPDATE ct_db.teken
+			SET InTake = @InTake,
+				Total_Take = @Total_Take,
+				Take_To = @Take_To,
+				ThroughBy_Take = @ThroughBy_Take,
+				Take_Date = @Take_Date,
+				Remarks_Take = @Remarks_Take,
+				TDT_V = @TDT_V,
+				TDT_V_Date = @TDT_V_Date,
+				DDT_V_Date = @DDT_V_Date,
+				T_Insrt_Person = @T_Insrt_Person,
+				T_Updt_Person = @T_Updt_Person,
+				T_Del_Person = @T_Del_Person
+			WHERE InTake = @InTake;
+		]]>
+	</UpdateTakenData>
+	<DeleteTakenData>
+		<![CDATA[
+			DELETE FROM ct_db.teken
+			WHERE InTake = @InTake;
+		]]>
+	</DeleteTakenData>
+</Queries>

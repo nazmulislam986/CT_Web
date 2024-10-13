@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<AddSavingInfo>
+		<![CDATA[
+			INSERT INTO ct_db.saving (InSaving, Saving_Amount, Saving_To, ThroughBy_Saving, Saving_Date, Remarks_Saving, SDT_V, SDT_V_Date, DDT_V_Date, Saving_Bank, S_Insrt_Person)
+			VALUES (@InSaving, @Saving_Amount, @Saving_To, @ThroughBy_Saving, @Saving_Date, @Remarks_Saving, @SDT_V, @SDT_V_Date, @DDT_V_Date, @Saving_Bank, @S_Insrt_Person);
+		]]>
+	</AddSavingInfo>
+	<GetSavingData>
+		<![CDATA[
+			SELECT * FROM ct_db.saving;
+		]]>
+	</GetSavingData>
+	<GetSavingIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.saving
+			WHERE InSaving = @InSaving;
+		]]>
+	</GetSavingIDData>
+	<UpdateSavingData>
+		<![CDATA[
+			UPDATE ct_db.saving
+			SET Saving_Amount = @Saving_Amount,
+				Saving_To = @Saving_To,
+				ThroughBy_Saving = @ThroughBy_Saving,
+				Saving_Date = @Saving_Date,
+				Remarks_Saving = @Remarks_Saving,
+				SDT_V = @SDT_V,
+				SDT_V_Date = @SDT_V_Date,
+				DDT_V_Date = @DDT_V_Date,
+				Saving_Bank = @Saving_Bank,				
+				S_Updt_Person = @S_Updt_Person				
+			WHERE InSaving = @InSaving;
+		]]>
+	</UpdateSavingData>
+	<DeleteSavingData>
+		<![CDATA[
+			UPDATE ct_db.saving
+			SET Saving_Amount = @Saving_Amount,
+				Saving_To = @Saving_To,
+				ThroughBy_Saving = @ThroughBy_Saving,
+				Saving_Date = @Saving_Date,
+				Remarks_Saving = @Remarks_Saving,
+				SDT_V = @SDT_V,
+				SDT_V_Date = @SDT_V_Date,
+				DDT_V_Date = @DDT_V_Date,
+				Saving_Bank = @Saving_Bank,				
+				S_Del_Person = @S_Del_Person
+			WHERE InSaving = @InSaving;
+		]]>
+	</DeleteSavingData>
+	<DeleteResonSavingData>
+		<![CDATA[
+			DELETE FROM ct_db.saving
+			WHERE InSaving = @InSaving;
+		]]>
+	</DeleteResonSavingData>
+</Queries>

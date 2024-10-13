@@ -12,14 +12,14 @@ namespace CT_Web.Repository_Layer
 {
     public class InstallmentRL : IInstallmentRL
     {
-        public readonly IConfiguration _configuration;
+        public readonly IConfiguration _configurationInstallment;
         public readonly MySqlConnection _sqlConn;
         public readonly ILogger<InstallmentRL> _logger;
-        public InstallmentRL(IConfiguration configuration, ILogger<InstallmentRL> logger)
+        public InstallmentRL(IConfiguration configurationInstallment, ILogger<InstallmentRL> logger)
         {
-            _configuration = configuration;
+            _configurationInstallment = configurationInstallment;
             _logger = logger;
-            _sqlConn = new MySqlConnection(_configuration["ConnectionStrings:connMySql"]);
+            _sqlConn = new MySqlConnection(_configurationInstallment["ConnectionStrings:connMySql"]);
         }
 
         public async Task<Installment> ICreateInstallmentRecordRL(Installment installment)

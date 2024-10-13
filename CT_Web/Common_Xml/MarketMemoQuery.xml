@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<AddMarketMemoInfo>
+		<![CDATA[
+			INSERT INTO ct_db.marketmemos (Mem_ID, Mem_Date, R_InvTK, C_InvTK, Giv_TK, Ret_TK, I_N01, I_N02, I_N03, I_N04, I_N05, I_N06, I_N07, I_N08, I_N09, I_N10, I_N11, I_N12, I_N13, I_N14, I_N15, I_N16, I_P01, I_P02, I_P03, I_P04, I_P05, I_P06, I_P07, I_P08, I_P09, I_P10, I_P11, I_P12, I_P13, I_P14, I_P15, I_P16, I_Q01, I_Q02, I_Q03, I_Q04, I_Q05, I_Q06, I_Q07, I_Q08, I_Q09, I_Q10, I_Q11, I_Q12, I_Q13, I_Q14, I_Q15, I_Q16, I_ST01, I_ST02, I_ST03, I_ST04, I_ST05, I_ST06, I_ST07, I_ST08, I_ST09, I_ST10, I_ST11, I_ST12, I_ST13, I_ST14, I_ST15, I_ST16, R_Inv01, R_Inv02, R_Inv03, R_Inv04, R_Inv05, R_Inv06, R_Inv07, R_Inv08, R_Inv09, R_Inv10, R_Inv11, R_Inv12, R_Inv13, R_Inv14, R_Inv15, R_Inv16, R_Inv17, R_Inv18, R_Inv19, R_Inv20, R_Inv21, R_Inv22, R_Inv23, R_Inv24, Mem_Insrt_Person)
+			VALUES (@Mem_ID, @Mem_Date, @R_InvTK, @C_InvTK, @Giv_TK, @Ret_TK, @I_N01, @I_N02, @I_N03, @I_N04, @I_N05, @I_N06, @I_N07, @I_N08, @I_N09, @I_N10, @I_N11, @I_N12, @I_N13, @I_N14, @I_N15, @I_N16, @I_P01, @I_P02, @I_P03, @I_P04, @I_P05, @I_P06, @I_P07, @I_P08, @I_P09, @I_P10, @I_P11, @I_P12, @I_P13, @I_P14, @I_P15, @I_P16, @I_Q01, @I_Q02, @I_Q03, @I_Q04, @I_Q05, @I_Q06, @I_Q07, @I_Q08, @I_Q09, @I_Q10, @I_Q11, @I_Q12, @I_Q13, @I_Q14, @I_Q15, @I_Q16, @I_ST01, @I_ST02, @I_ST03, @I_ST04, @I_ST05, @I_ST06, @I_ST07, @I_ST08, @I_ST09, @I_ST10, @I_ST11, @I_ST12, @I_ST13, @I_ST14, @I_ST15, @I_ST16, @R_Inv01, @R_Inv02, @R_Inv03, @R_Inv04, @R_Inv05, @R_Inv06, @R_Inv07, @R_Inv08, @R_Inv09, @R_Inv10, @R_Inv11, @R_Inv12, @R_Inv13, @R_Inv14, @R_Inv15, @R_Inv16, @R_Inv17, @R_Inv18, @R_Inv19, @R_Inv20, @R_Inv21, @R_Inv22, @R_Inv23, @R_Inv24, @Mem_Insrt_Person);
+		]]>
+	</AddMarketMemoInfo>
+	<GetMarketMemoData>
+		<![CDATA[
+			SELECT * FROM ct_db.marketmemos;
+		]]>
+	</GetMarketMemoData>
+	<GetMarketMemoIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.marketmemos
+			WHERE Mem_ID = @Mem_ID;
+		]]>
+	</GetMarketMemoIDData>
+	<UpdateMarketMemoData>
+		<![CDATA[
+			UPDATE ct_db.marketmemos
+			SET R_InvTK = @R_InvTK,
+				C_InvTK = @C_InvTK,
+				Giv_TK = @Giv_TK,
+				Ret_TK = @Ret_TK,
+				I_N01 = @I_N01,
+				I_N02 = @I_N02,
+				I_N03 = @I_N03,
+				I_N04 = @I_N04,
+				I_N05 = @I_N05,
+				I_N06 = @I_N06,
+				I_N07 = @I_N07,
+				I_N08 = @I_N08,
+				I_N09 = @I_N09,
+				I_N10 = @I_N10,
+				I_N11 = @I_N11,
+				I_N12 = @I_N12,
+				I_N13 = @I_N13,
+				I_N14 = @I_N14,
+				I_N15 = @I_N15,
+				I_N16 = @I_N16,
+				I_P01 = @I_P01,
+				I_P02 = @I_P02,
+				I_P03 = @I_P03,
+				I_P04 = @I_P04,
+				I_P05 = @I_P05,
+				I_P06 = @I_P06,
+				I_P07 = @I_P07,
+				I_P08 = @I_P08,
+				I_P09 = @I_P09,
+				I_P10 = @I_P10,
+				I_P11 = @I_P11,
+				I_P12 = @I_P12,
+				I_P13 = @I_P13,
+				I_P14 = @I_P14,
+				I_P15 = @I_P15,
+				I_P16 = @I_P16,
+				I_Q01 = @I_Q01,
+				I_Q02 = @I_Q02,
+				I_Q03 = @I_Q03,
+				I_Q04 = @I_Q04,
+				I_Q05 = @I_Q05,
+				I_Q06 = @I_Q06,
+				I_Q07 = @I_Q07,
+				I_Q08 = @I_Q08,
+				I_Q09 = @I_Q09,
+				I_Q10 = @I_Q10,
+				I_Q11 = @I_Q11,
+				I_Q12 = @I_Q12,
+				I_Q13 = @I_Q13,
+				I_Q14 = @I_Q14,
+				I_Q15 = @I_Q15,
+				I_Q16 = @I_Q16,
+				I_ST01 = @I_ST01,
+				I_ST02 = @I_ST02,
+				I_ST03 = @I_ST03,
+				I_ST04 = @I_ST04,
+				I_ST05 = @I_ST05,
+				I_ST06 = @I_ST06,
+				I_ST07 = @I_ST07,
+				I_ST08 = @I_ST08,
+				I_ST09 = @I_ST09,
+				I_ST10 = @I_ST10,
+				I_ST11 = @I_ST11,
+				I_ST12 = @I_ST12,
+				I_ST13 = @I_ST13,
+				I_ST14 = @I_ST14,
+				I_ST15 = @I_ST15,
+				I_ST16 = @I_ST16,
+				R_Inv01 = @R_Inv01,
+				R_Inv02 = @R_Inv02,
+				R_Inv03 = @R_Inv03,
+				R_Inv04 = @R_Inv04,
+				R_Inv05 = @R_Inv05,
+				R_Inv06 = @R_Inv06,
+				R_Inv07 = @R_Inv07,
+				R_Inv08 = @R_Inv08,
+				R_Inv09 = @R_Inv09,
+				R_Inv10 = @R_Inv10,
+				R_Inv11 = @R_Inv11,
+				R_Inv12 = @R_Inv12,
+				R_Inv13 = @R_Inv13,
+				R_Inv14 = @R_Inv14,
+				R_Inv15 = @R_Inv15,
+				R_Inv16 = @R_Inv16,
+				R_Inv17 = @R_Inv17,
+				R_Inv18 = @R_Inv18,
+				R_Inv19 = @R_Inv19,
+				R_Inv20 = @R_Inv20,
+				R_Inv21 = @R_Inv21,
+				R_Inv22 = @R_Inv22,
+				R_Inv23 = @R_Inv23,
+				R_Inv24 = @R_Inv24,				
+				Mem_Updt_Person = @Mem_Updt_Person				
+			WHERE Mem_ID = @Mem_ID;
+		]]>
+	</UpdateMarketMemoData>
+	<DeleteMarketMemoData>
+		<![CDATA[
+			INSERT INTO ct_db.marketmemosdel SELECT * FROM ct_db.marketmemos
+			DELETE FROM ct_db.marketmemos
+			WHERE Mem_ID = @Mem_ID;
+		]]>
+	</DeleteMarketMemoData>
+</Queries>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<AddUndatedInfo>
+		<![CDATA[
+			INSERT INTO ct_db.unrated (InUnrated, Unrated_Amount, Unrated_To, ThroughBy_Unrated, Unrated_Date, Remarks_Unrated, UDT_V, UDT_V_Date, DDT_V_Date, U_Insrt_Person, U_Updt_Person, U_Del_Person)
+			VALUES (@InUnrated, @Unrated_Amount, @Unrated_To, @ThroughBy_Unrated, @Unrated_Date, @Remarks_Unrated, @UDT_V, @UDT_V_Date, @DDT_V_Date, @U_Insrt_Person, @U_Updt_Person, @U_Del_Person);
+		]]>
+	</AddUndatedInfo>
+	<GetUndatedData>
+		<![CDATA[
+			SELECT * FROM ct_db.unrated;
+		]]>
+	</GetUndatedData>
+	<GetUndatedIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.unrated
+			WHERE InUnrated = @InUnrated;
+		]]>
+	</GetUndatedIDData>
+	<UpdateUndatedData>
+		<![CDATA[
+			UPDATE ct_db.unrated
+			SET InUnrated = @InUnrated,
+				Unrated_Amount = @Unrated_Amount,
+				Unrated_To = @Unrated_To,
+				ThroughBy_Unrated = @ThroughBy_Unrated,
+				Unrated_Date = @Unrated_Date,
+				Remarks_Unrated = @Remarks_Unrated,
+				UDT_V = @UDT_V,
+				UDT_V_Date = @UDT_V_Date,
+				DDT_V_Date = @DDT_V_Date,
+				U_Insrt_Person = @U_Insrt_Person,
+				U_Updt_Person = @U_Updt_Person,
+				U_Del_Person = @U_Del_Person
+			WHERE InUnrated = @InUnrated;
+		]]>
+	</UpdateUndatedData>
+	<DeleteUndatedData>
+		<![CDATA[
+			DELETE FROM ct_db.unrated
+			WHERE InUnrated = @InUnrated;
+		]]>
+	</DeleteUndatedData>
+</Queries>

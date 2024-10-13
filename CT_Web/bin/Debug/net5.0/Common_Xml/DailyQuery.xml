@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<AddDailyInfo>
+		<![CDATA[
+			INSERT INTO ct_db.daily (D_ID, D_Date, D_FPAmount, D_SPAmount, NotTaken, D_Data, TakenDate, D_Insrt_Person)
+			VALUES (@D_ID, @D_Date, @D_FPAmount, @D_SPAmount, @NotTaken, @D_Data, @TakenDate, @D_Insrt_Person);
+		]]>
+	</AddDailyInfo>
+	<GetDailyData>
+		<![CDATA[
+			SELECT * FROM ct_db.daily
+			WHERE D_Data = 'NTKN';
+		]]>
+	</GetDailyData>
+	<GetDailyIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.daily
+			WHERE D_ID = @D_ID;
+		]]>
+	</GetDailyIDData>
+	<UpdateDailyData>
+		<![CDATA[
+			UPDATE ct_db.daily
+			SET D_FPAmount = @D_FPAmount,
+				D_SPAmount = @D_SPAmount,
+				NotTaken = @NotTaken,
+				D_Updt_Person = @D_Updt_Person
+			WHERE D_ID = @D_ID;
+		]]>
+	</UpdateDailyData>
+	<DeleteDailyData>
+		<![CDATA[
+			UPDATE ct_db.daily
+			SET D_Data = @D_Data,
+				TakenDate = @TakenDate, 
+				D_Del_Person = @D_Del_Person
+			WHERE D_ID = @D_ID;
+		]]>
+	</DeleteDailyData>
+	<DeleteResonDailyData>
+		<![CDATA[
+			DELETE FROM ct_db.daily
+			WHERE D_ID = @D_ID;
+		]]>
+	</DeleteResonDailyData>
+</Queries>

@@ -13,14 +13,14 @@ namespace CT_Web.Repository_Layer
 {
     public class DailyAntRL : IDailyAntRL
     {
-        public readonly IConfiguration _configuration;
+        public readonly IConfiguration _configurationDailyAnt;
         public readonly MySqlConnection _sqlConn;
         public readonly ILogger<DailyAntRL> _logger;
-        public DailyAntRL(IConfiguration configuration, ILogger<DailyAntRL> logger)
+        public DailyAntRL(IConfiguration configurationDailyAnt, ILogger<DailyAntRL> logger)
         {
-            _configuration = configuration;
+            _configurationDailyAnt = configurationDailyAnt;
             _logger = logger;
-            _sqlConn = new MySqlConnection(_configuration["ConnectionStrings:connMySql"]);
+            _sqlConn = new MySqlConnection(_configurationDailyAnt["ConnectionStrings:connMySql"]);
         }
 
         public async Task<DailyAnt> ICreateDailyAntRecordRL(DailyAnt dailyAnt)

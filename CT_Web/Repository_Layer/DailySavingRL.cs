@@ -12,14 +12,14 @@ namespace CT_Web.Repository_Layer
 {
     public class DailySavingRL : IDailySavingRL
     {
-        public readonly IConfiguration _configuration;
+        public readonly IConfiguration _configurationDailySaving;
         public readonly MySqlConnection _sqlConn;
         public readonly ILogger<DailySavingRL> _logger;
-        public DailySavingRL(IConfiguration configuration, ILogger<DailySavingRL> logger)
+        public DailySavingRL(IConfiguration configurationDailySaving, ILogger<DailySavingRL> logger)
         {
-            _configuration = configuration;
+            _configurationDailySaving = configurationDailySaving;
             _logger = logger;
-            _sqlConn = new MySqlConnection(_configuration["ConnectionStrings:connMySql"]);
+            _sqlConn = new MySqlConnection(_configurationDailySaving["ConnectionStrings:connMySql"]);
         }
 
         public async Task<DailySaving> ICreateDailySavingRecordRL(DailySaving dailySaving)

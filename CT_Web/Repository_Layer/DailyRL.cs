@@ -14,14 +14,14 @@ namespace CT_Web.Repository_Layer
 {
     public class DailyRL : IDailyRL
     {
-        public readonly IConfiguration _configuration;
+        public readonly IConfiguration _configurationDaily;
         public readonly MySqlConnection _sqlConn;
         public readonly ILogger<DailyRL> _logger;
-        public DailyRL(IConfiguration configuration, ILogger<DailyRL> logger)
+        public DailyRL(IConfiguration configurationDaily, ILogger<DailyRL> logger)
         {
-            _configuration = configuration;
+            _configurationDaily = configurationDaily;
             _logger = logger;
-            _sqlConn = new MySqlConnection(_configuration["ConnectionStrings:connMySql"]);
+            _sqlConn = new MySqlConnection(_configurationDaily["ConnectionStrings:connMySql"]);
         }
 
         public async Task<Daily> ICreateDailyRecordRL(Daily daily)

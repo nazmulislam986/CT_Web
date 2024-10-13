@@ -12,14 +12,14 @@ namespace CT_Web.Repository_Layer
 {
     public class BikeInfoRL : IBikeInfoRL
     {
-        public readonly IConfiguration _configuration;
+        public readonly IConfiguration _configurationBike;
         public readonly MySqlConnection _sqlConn;
         public readonly ILogger<BikeInfoRL> _logger;
-        public BikeInfoRL(IConfiguration configuration, ILogger<BikeInfoRL> logger)
+        public BikeInfoRL(IConfiguration configurationBike, ILogger<BikeInfoRL> logger)
         {
-            _configuration = configuration;
+            _configurationBike = configurationBike;
             _logger = logger;
-            _sqlConn = new MySqlConnection(_configuration["ConnectionStrings:connMySql"]);
+            _sqlConn = new MySqlConnection(_configurationBike["ConnectionStrings:connMySql"]);
         }
 
         public async Task<BikeInfo> ICreateBikeInfoRecordRL(BikeInfo bikeinfo)

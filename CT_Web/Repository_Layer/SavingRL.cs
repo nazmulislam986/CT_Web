@@ -12,14 +12,14 @@ namespace CT_Web.Repository_Layer
 {
     public class SavingRL : ISavingRL
     {
-        public readonly IConfiguration _configuration;
+        public readonly IConfiguration _configurationSaving;
         public readonly MySqlConnection _sqlConn;
         public readonly ILogger<SavingRL> _logger;
-        public SavingRL(IConfiguration configuration, ILogger<SavingRL> logger)
+        public SavingRL(IConfiguration configurationSaving, ILogger<SavingRL> logger)
         {
-            _configuration = configuration;
+            _configurationSaving = configurationSaving;
             _logger = logger;
-            _sqlConn = new MySqlConnection(_configuration["ConnectionStrings:connMySql"]);
+            _sqlConn = new MySqlConnection(_configurationSaving["ConnectionStrings:connMySql"]);
         }
 
         public async Task<Saving> ICreateSavingRecordRL(Saving saving)

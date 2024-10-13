@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<AddDailySavingInfo>
+		<![CDATA[
+			INSERT INTO ct_db.dailysaving (DS_ID, DS_Date, DS_FPAmount, DS_SPAmount, DS_TPAmount, NotTaken, DS_Data, DS_InBankDate, DS_Insrt_Person)
+			VALUES (@DS_ID, @DS_Date, @DS_FPAmount, @DS_SPAmount, @DS_TPAmount, @NotTaken, @DS_Data, @DS_InBankDate, @DS_Insrt_Person);
+		]]>
+	</AddDailySavingInfo>
+	<GetDailySavingData>
+		<![CDATA[
+			SELECT * FROM ct_db.dailysaving;
+		]]>
+	</GetDailySavingData>
+	<GetDailySavingIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.dailysaving
+			WHERE DS_ID = @DS_ID;
+		]]>
+	</GetDailySavingIDData>
+	<UpdateDailySavingData>
+		<![CDATA[
+			UPDATE ct_db.dailysaving
+			SET	DS_FPAmount = @DS_FPAmount,
+				DS_SPAmount = @DS_SPAmount,
+				DS_TPAmount = @DS_TPAmount,
+				NotTaken = @NotTaken,			
+				DS_Updt_Person = @DS_Updt_Person				
+			WHERE DS_ID = @DS_ID;
+		]]>
+	</UpdateDailySavingData>
+	<DeleteDailySavingData>
+		<![CDATA[
+			UPDATE ct_db.dailysaving
+			SET DS_Data = @DS_Data,
+				DS_InBankDate = @DS_InBankDate,				
+				DS_Del_Person = @DS_Del_Person	
+			WHERE DS_ID = @DS_ID;
+		]]>
+	</DeleteDailySavingData>
+	<DeleteResonDailySavingData>
+		<![CDATA[
+			DELETE FROM ct_db.dailysaving
+			WHERE DS_ID = @DS_ID;
+		]]>
+	</DeleteResonDailySavingData>
+</Queries>

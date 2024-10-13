@@ -12,14 +12,14 @@ namespace CT_Web.Repository_Layer
 {
     public class MarketRL : IMarketRL
     {
-        public readonly IConfiguration _configuration;
+        public readonly IConfiguration _configurationMarket;
         public readonly MySqlConnection _sqlConn;
         public readonly ILogger<MarketRL> _logger;
-        public MarketRL(IConfiguration configuration, ILogger<MarketRL> logger)
+        public MarketRL(IConfiguration configurationMarket, ILogger<MarketRL> logger)
         {
-            _configuration = configuration;
+            _configurationMarket = configurationMarket;
             _logger = logger;
-            _sqlConn = new MySqlConnection(_configuration["ConnectionStrings:connMySql"]);
+            _sqlConn = new MySqlConnection(_configurationMarket["ConnectionStrings:connMySql"]);
         }
 
         public async Task<Market> ICreateMarketRecordRL(Market market)

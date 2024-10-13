@@ -12,14 +12,14 @@ namespace CT_Web.Repository_Layer
 {
     public class TariffAmtRL : ITariffAmtRL
     {
-        public readonly IConfiguration _configuration;
+        public readonly IConfiguration _configurationTariffAmt;
         public readonly MySqlConnection _sqlConn;
         public readonly ILogger<TariffAmtRL> _logger;
-        public TariffAmtRL(IConfiguration configuration, ILogger<TariffAmtRL> logger)
+        public TariffAmtRL(IConfiguration configurationTariffAmt, ILogger<TariffAmtRL> logger)
         {
-            _configuration = configuration;
+            _configurationTariffAmt = configurationTariffAmt;
             _logger = logger;
-            _sqlConn = new MySqlConnection(_configuration["ConnectionStrings:connMySql"]);
+            _sqlConn = new MySqlConnection(_configurationTariffAmt["ConnectionStrings:connMySql"]);
         }
 
         public async Task<TariffAmt> ICreateTariffAmtRecordRL(TariffAmt tariffAmt)

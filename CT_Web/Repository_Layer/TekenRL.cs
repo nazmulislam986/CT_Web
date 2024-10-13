@@ -12,14 +12,14 @@ namespace CT_Web.Repository_Layer
 {
     public class TekenRL : ITekenRL
     {
-        public readonly IConfiguration _configuration;
+        public readonly IConfiguration _configurationTeken;
         public readonly MySqlConnection _sqlConn;
         public readonly ILogger<TekenRL> _logger;
-        public TekenRL(IConfiguration configuration, ILogger<TekenRL> logger)
+        public TekenRL(IConfiguration configurationTeken, ILogger<TekenRL> logger)
         {
-            _configuration = configuration;
+            _configurationTeken = configurationTeken;
             _logger = logger;
-            _sqlConn = new MySqlConnection(_configuration["ConnectionStrings:connMySql"]);
+            _sqlConn = new MySqlConnection(_configurationTeken["ConnectionStrings:connMySql"]);
         }
 
         public async Task<Teken> ICreateTekenRecordRL(Teken teken)

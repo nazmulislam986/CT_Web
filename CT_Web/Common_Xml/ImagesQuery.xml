@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<AddImagesInfo>
+		<![CDATA[
+			INSERT INTO ct_db.images (Img_ID, ImageData)
+			VALUES (@Img_ID, @ImageData);
+		]]>
+	</AddImagesInfo>
+	<GetImagesData>
+		<![CDATA[
+			SELECT * FROM ct_db.images;
+		]]>
+	</GetImagesData>
+	<GetImagesIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.images
+			WHERE Img_ID = @Img_ID;
+		]]>
+	</GetImagesIDData>
+	<UpdateImagesData>
+		<![CDATA[
+			UPDATE ct_db.images
+			SET 
+				ImageData = @ImageData			
+			WHERE Img_ID = @Img_ID;
+		]]>
+	</UpdateImagesData>
+	<DeleteImagesData>
+		<![CDATA[
+			DELETE FROM ct_db.images
+			WHERE Img_ID = @Img_ID;
+		]]>
+	</DeleteImagesData>
+</Queries>

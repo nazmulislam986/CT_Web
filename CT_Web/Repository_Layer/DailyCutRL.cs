@@ -13,14 +13,14 @@ namespace CT_Web.Repository_Layer
 {
     public class DailyCutRL : IDailyCutRL
     {
-        public readonly IConfiguration _configuration;
+        public readonly IConfiguration _configurationDailyCut;
         public readonly MySqlConnection _sqlConn;
         public readonly ILogger<DailyCutRL> _logger;
-        public DailyCutRL(IConfiguration configuration, ILogger<DailyCutRL> logger)
+        public DailyCutRL(IConfiguration configurationDailyCut, ILogger<DailyCutRL> logger)
         {
-            _configuration = configuration;
+            _configurationDailyCut = configurationDailyCut;
             _logger = logger;
-            _sqlConn = new MySqlConnection(_configuration["ConnectionStrings:connMySql"]);
+            _sqlConn = new MySqlConnection(_configurationDailyCut["ConnectionStrings:connMySql"]);
         }
 
         public async Task<DailyCut> ICreateDailyCutRecordRL(DailyCut dailyCut)

@@ -12,14 +12,14 @@ namespace CT_Web.Repository_Layer
 {
     public class GivenRL : IGivenRL
     {
-        public readonly IConfiguration _configuration;
+        public readonly IConfiguration _configurationGiven;
         public readonly MySqlConnection _sqlConn;
         public readonly ILogger<GivenRL> _logger;
-        public GivenRL(IConfiguration configuration, ILogger<GivenRL> logger)
+        public GivenRL(IConfiguration configurationGiven, ILogger<GivenRL> logger)
         {
-            _configuration = configuration;
+            _configurationGiven = configurationGiven;
             _logger = logger;
-            _sqlConn = new MySqlConnection(_configuration["ConnectionStrings:connMySql"]);
+            _sqlConn = new MySqlConnection(_configurationGiven["ConnectionStrings:connMySql"]);
         }
 
         public async Task<Given> ICreateGivenRecordRL(Given given)

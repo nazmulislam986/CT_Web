@@ -12,14 +12,14 @@ namespace CT_Web.Repository_Layer
 {
     public class UnratedRL : IUnratedRL
     {
-        public readonly IConfiguration _configuration;
+        public readonly IConfiguration _configurationUnrated;
         public readonly MySqlConnection _sqlConn;
         public readonly ILogger<UnratedRL> _logger;
-        public UnratedRL(IConfiguration configuration, ILogger<UnratedRL> logger)
+        public UnratedRL(IConfiguration configurationUnrated, ILogger<UnratedRL> logger)
         {
-            _configuration = configuration;
+            _configurationUnrated = configurationUnrated;
             _logger = logger;
-            _sqlConn = new MySqlConnection(_configuration["ConnectionStrings:connMySql"]);
+            _sqlConn = new MySqlConnection(_configurationUnrated["ConnectionStrings:connMySql"]);
         }
 
         public async Task<Unrated> ICreateUnratedRecordRL(Unrated unrated)

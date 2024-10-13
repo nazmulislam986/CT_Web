@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<AddDailyCutInfo>
+		<![CDATA[
+			INSERT INTO ct_db.dailycut (C_ID, C_Date, C_Amount, C_Insrt_Person)
+			VALUES (@C_ID, @C_Date, @C_Amount, @C_Insrt_Person);
+		]]>
+	</AddDailyCutInfo>
+	<GetDailyCutData>
+		<![CDATA[
+			SELECT * FROM ct_db.dailycut;
+		]]>
+	</GetDailyCutData>
+	<GetDailyCutIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.dailycut
+			WHERE C_ID = @C_ID;
+		]]>
+	</GetDailyCutIDData>
+	<UpdateDailyCutData>
+		<![CDATA[
+			UPDATE ct_db.dailycut
+			SET C_Amount = @C_Amount, 
+				C_Updt_Person = @C_Updt_Person
+			WHERE C_ID = @C_ID;
+		]]>
+	</UpdateDailyCutData>
+	<DeleteDailyCutData>
+		<![CDATA[
+			DELETE FROM ct_db.dailycut
+			WHERE C_ID = @C_ID;
+		]]>
+	</DeleteDailyCutData>
+</Queries>

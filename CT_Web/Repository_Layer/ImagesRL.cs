@@ -12,14 +12,14 @@ namespace CT_Web.Repository_Layer
 {
     public class ImagesRL : IImagesRL
     {
-        public readonly IConfiguration _configuration;
+        public readonly IConfiguration _configurationImages;
         public readonly MySqlConnection _sqlConn;
         public readonly ILogger<ImagesRL> _logger;
-        public ImagesRL(IConfiguration configuration, ILogger<ImagesRL> logger)
+        public ImagesRL(IConfiguration configurationImages, ILogger<ImagesRL> logger)
         {
-            _configuration = configuration;
+            _configurationImages = configurationImages;
             _logger = logger;
-            _sqlConn = new MySqlConnection(_configuration["ConnectionStrings:connMySql"]);
+            _sqlConn = new MySqlConnection(_configurationImages["ConnectionStrings:connMySql"]);
         }
 
         public async Task<Images> ICreateImagesRecordRL(Images images)

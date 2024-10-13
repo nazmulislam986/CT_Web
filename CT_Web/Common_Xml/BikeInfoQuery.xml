@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Queries>
+	<AddBikeInfo>
+		<![CDATA[
+			INSERT INTO ct_db.bikeinfo (B_ID, B_Chng_Date, B_KM_ODO, B_Mobile_Go, B_Next_ODO, B_Insrt_Person)
+			VALUES(@B_ID, @B_Chng_Date, @B_KM_ODO, @B_Mobile_Go, @B_Next_ODO, @B_Insrt_Person);
+		]]>
+	</AddBikeInfo>
+	<GetBikeData>
+		<![CDATA[
+			SELECT * FROM ct_db.bikeinfo;
+		]]>
+	</GetBikeData>
+	<GetBikeIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.bikeinfo 
+			WHERE B_ID = @B_ID;
+		]]>
+	</GetBikeIDData>
+	<UpdateBikeData>
+		<![CDATA[
+			UPDATE ct_db.bikeinfo
+			SET B_KM_ODO = @B_KM_ODO, 
+				B_Mobile_Go = @B_Mobile_Go, 
+				B_Next_ODO = @B_Next_ODO,
+				B_Updt_Person = @B_Updt_Person
+			WHERE B_ID = @B_ID;
+		]]>
+	</UpdateBikeData>
+	<DeleteBikeData>
+		<![CDATA[
+			DELETE FROM ct_db.bikeinfo
+			WHERE B_ID = @B_ID;
+		]]>
+	</DeleteBikeData>
+</Queries>
