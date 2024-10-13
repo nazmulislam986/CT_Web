@@ -13,7 +13,7 @@ namespace CT_App.Models
         public float Take_Total { get; set; }
         public float Take_Anot { get; set; }
         public float Take_Mine { get; set; }
-        public string Take_Data { get; set; }
+        public DateTime Take_Data { get; set; }
         public float InsPerMonth { get; set; }
         public float PerMonthPay { get; set; }
         public float InsPay { get; set; }

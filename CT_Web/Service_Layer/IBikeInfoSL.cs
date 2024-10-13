@@ -13,6 +13,5 @@ namespace CT_Web.Service_Layer
         public Task<BikeInfo> IReadBikeInfoIDRecordSL(BikeInfo bikeInfo);
         public Task<BikeInfo> IUpdateBikeInfoRecordSL(BikeInfo bikeInfo);
         public Task<BikeInfo> IDeleteBikeInfoRecordSL(BikeInfo bikeInfo);
-
     }
 }

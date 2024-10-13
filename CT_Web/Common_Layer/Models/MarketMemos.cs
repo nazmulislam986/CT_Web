@@ -83,30 +83,30 @@ namespace CT_App.Models
         public float I_ST15 { get; set; }
         public float I_ST16 { get; set; }
 
-        public float R_Inv01 { get; set; }
-        public float R_Inv02 { get; set; }
-        public float R_Inv03 { get; set; }
-        public float R_Inv04 { get; set; }
-        public float R_Inv05 { get; set; }
-        public float R_Inv06 { get; set; }
-        public float R_Inv07 { get; set; }
-        public float R_Inv08 { get; set; }
-        public float R_Inv09 { get; set; }
-        public float R_Inv10 { get; set; }
-        public float R_Inv11 { get; set; }
-        public float R_Inv12 { get; set; }
-        public float R_Inv13 { get; set; }
-        public float R_Inv14 { get; set; }
-        public float R_Inv15 { get; set; }
-        public float R_Inv16 { get; set; }
-        public float R_Inv17 { get; set; }
-        public float R_Inv18 { get; set; }
-        public float R_Inv19 { get; set; }
-        public float R_Inv20 { get; set; }
-        public float R_Inv21 { get; set; }
-        public float R_Inv22 { get; set; }
-        public float R_Inv23 { get; set; }
-        public float R_Inv24 { get; set; }
+        public string R_Inv01 { get; set; }
+        public string R_Inv02 { get; set; }
+        public string R_Inv03 { get; set; }
+        public string R_Inv04 { get; set; }
+        public string R_Inv05 { get; set; }
+        public string R_Inv06 { get; set; }
+        public string R_Inv07 { get; set; }
+        public string R_Inv08 { get; set; }
+        public string R_Inv09 { get; set; }
+        public string R_Inv10 { get; set; }
+        public string R_Inv11 { get; set; }
+        public string R_Inv12 { get; set; }
+        public string R_Inv13 { get; set; }
+        public string R_Inv14 { get; set; }
+        public string R_Inv15 { get; set; }
+        public string R_Inv16 { get; set; }
+        public string R_Inv17 { get; set; }
+        public string R_Inv18 { get; set; }
+        public string R_Inv19 { get; set; }
+        public string R_Inv20 { get; set; }
+        public string R_Inv21 { get; set; }
+        public string R_Inv22 { get; set; }
+        public string R_Inv23 { get; set; }
+        public string R_Inv24 { get; set; }
 
         public string Mem_Insrt_Person { get; set; }
         public string Mem_Updt_Person { get; set; }

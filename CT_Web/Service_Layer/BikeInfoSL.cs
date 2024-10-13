@@ -19,23 +19,28 @@ namespace CT_Web.Service_Layer
         }
         public async Task<BikeInfo> ICreateBikeInfoRecordSL(BikeInfo bikeInfo)
         {
+            _logger.LogInformation($"Calling Service Layer");
             return await _bikeInfoRL.ICreateBikeInfoRecordRL(bikeInfo);
-        }
-        public async Task<BikeInfo> IDeleteBikeInfoRecordSL(BikeInfo bikeInfo)
-        {
-            return await _bikeInfoRL.IDeleteBikeInfoRecordRL(bikeInfo);
-        }
-        public async Task<BikeInfo> IReadBikeInfoIDRecordSL(BikeInfo bikeInfo)
-        {
-            return await _bikeInfoRL.IReadBikeInfoIDRecordRL(bikeInfo);
         }
         public async Task<BikeInfo> IReadBikeInfoRecordSL()
         {
+            _logger.LogInformation($"Calling Service Layer");
             return await _bikeInfoRL.IReadBikeInfoRecordRL();
+        }
+        public async Task<BikeInfo> IReadBikeInfoIDRecordSL(BikeInfo bikeInfo)
+        {
+            _logger.LogInformation($"Calling Service Layer");
+            return await _bikeInfoRL.IReadBikeInfoIDRecordRL(bikeInfo);
         }
         public async Task<BikeInfo> IUpdateBikeInfoRecordSL(BikeInfo bikeInfo)
         {
+            _logger.LogInformation($"Calling Service Layer");
             return await _bikeInfoRL.IUpdateBikeInfoRecordRL(bikeInfo);
+        }
+        public async Task<BikeInfo> IDeleteBikeInfoRecordSL(BikeInfo bikeInfo)
+        {
+            _logger.LogInformation($"Calling Service Layer");
+            return await _bikeInfoRL.IDeleteBikeInfoRecordRL(bikeInfo);
         }
     }
 }

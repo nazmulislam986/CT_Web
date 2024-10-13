@@ -79,7 +79,7 @@ namespace CT_Web.Repository_Layer
                 {
                     await _sqlConn.OpenAsync();
                 }
-                using (MySqlCommand cmd = new MySqlCommand(SqlQueries.ReadBike, _sqlConn))
+                using (MySqlCommand cmd = new MySqlCommand(SqlQueries.GetBike, _sqlConn))
                 {
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandTimeout = 180;
@@ -136,7 +136,7 @@ namespace CT_Web.Repository_Layer
                 {
                     await _sqlConn.OpenAsync();
                 }
-                using (MySqlCommand cmd = new MySqlCommand(SqlQueries.ReadBikeID, _sqlConn))
+                using (MySqlCommand cmd = new MySqlCommand(SqlQueries.GetBikeID, _sqlConn))
                 {
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandTimeout = 180;
@@ -217,7 +217,7 @@ namespace CT_Web.Repository_Layer
             {
                 respBike.IsSuccess = false;
                 respBike.Message = ex.Message;
-                _logger.LogError($"Update BIke Record Error Message : {ex.Message}");
+                _logger.LogError($"Update Bike Record Error Message : {ex.Message}");
             }
             finally
             {

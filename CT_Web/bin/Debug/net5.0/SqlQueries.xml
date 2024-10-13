@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Queries>
-
-
 	<!--////////////////////////// All Bike Info Querys Details //////////////////////////////////////////-->
 	<AddBikeInfo>
 		<![CDATA[
@@ -36,14 +34,292 @@
 			WHERE B_ID = @B_ID;
 		]]>
 	</DeleteBikeData>
-
-
-
-
-
-
-
-
+	<!--////////////////////////// All Daily Info Querys Details //////////////////////////////////////////-->
+	<AddDailyInfo>
+		<![CDATA[
+			INSERT INTO ct_db.daily (D_ID, D_Date, D_FPAmount, D_SPAmount, NotTaken, D_Data, TakenDate, D_Insrt_Person)
+			VALUES (@D_ID, @D_Date, @D_FPAmount, @D_SPAmount, @NotTaken, @D_Data, @TakenDate, @D_Insrt_Person);
+		]]>
+	</AddDailyInfo>
+	<GetDailyData>
+		<![CDATA[
+			SELECT * FROM ct_db.daily
+			WHERE D_Data = 'NTKN';
+		]]>
+	</GetDailyData>
+	<GetDailyIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.daily
+			WHERE D_ID = @D_ID;
+		]]>
+	</GetDailyIDData>
+	<UpdateDailyData>
+		<![CDATA[
+			UPDATE ct_db.daily
+			SET D_FPAmount = @D_FPAmount,
+				D_SPAmount = @D_SPAmount,
+				NotTaken = @NotTaken,
+				D_Updt_Person = @D_Updt_Person
+			WHERE D_ID = @D_ID;
+		]]>
+	</UpdateDailyData>
+	<DeleteDailyData>
+		<![CDATA[
+			UPDATE ct_db.daily
+			SET D_Data = @D_Data,
+				TakenDate = @TakenDate, 
+				D_Del_Person = @D_Del_Person
+			WHERE D_ID = @D_ID;
+		]]>
+	</DeleteDailyData>
+	<DeleteResonDailyData>
+		<![CDATA[
+			DELETE FROM ct_db.daily
+			WHERE D_ID = @D_ID;
+		]]>
+	</DeleteResonDailyData>
+	<!--////////////////////////// All DailyAnt Info Querys Details //////////////////////////////////////////-->
+	<AddDailyAntInfo>
+		<![CDATA[		
+			INSERT INTO ct_db.dailyant (DA_ID, DA_Date, DA_FPAmount, DA_SPAmount, NotTaken, DA_Data, TakenDate, DA_Insrt_Person)
+			VALUES (@DA_ID, @DA_Date, @DA_FPAmount, @DA_SPAmount, @NotTaken, @DA_Data, @TakenDate, @DA_Insrt_Person);
+		]]>
+	</AddDailyAntInfo>
+	<GetDailyAntData>
+		<![CDATA[
+			SELECT * FROM ct_db.dailyant;
+		]]>
+	</GetDailyAntData>
+	<GetDailyAntIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.dailyant 
+			WHERE DA_ID = @DA_ID;
+		]]>
+	</GetDailyAntIDData>
+	<UpdateDailyAntData>
+		<![CDATA[
+			UPDATE ct_db.dailyant
+			SET DA_FPAmount,
+				DA_SPAmount,
+				NotTaken,				
+				DA_Updt_Person
+			WHERE DA_ID = @DA_ID;
+		]]>
+	</UpdateDailyAntData>
+	<DeleteDailyAntData>
+		<![CDATA[
+			UPDATE ct_db.dailyant
+			SET DA_Data,
+				TakenDate,
+				DA_Del_Person
+			WHERE DA_ID = @DA_ID;
+		]]>
+	</DeleteDailyAntData>
+	<DeleteResonDailyData>
+		<![CDATA[
+			DELETE FROM ct_db.dailyant
+			WHERE DA_ID = @DA_ID;
+		]]>
+	</DeleteResonDailyData>
+	<!--////////////////////////// All DailyCut Info Querys Details //////////////////////////////////////////-->
+	<AddDailyCutInfo>
+		<![CDATA[
+			INSERT INTO ct_db.dailycut (C_ID, C_Date, C_Amount, C_Insrt_Person)
+			VALUES (@C_ID, @C_Date, @C_Amount, @C_Insrt_Person);
+		]]>
+	</AddDailyCutInfo>
+	<GetDailyCutData>
+		<![CDATA[
+			SELECT * FROM ct_db.dailycut;
+		]]>
+	</GetDailyCutData>
+	<GetDailyCutIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.dailycut
+			WHERE C_ID = @C_ID;
+		]]>
+	</GetDailyCutIDData>
+	<UpdateDailyCutData>
+		<![CDATA[
+			UPDATE ct_db.dailycut
+			SET C_Amount = @C_Amount, 
+				C_Updt_Person = @C_Updt_Person
+			WHERE C_ID = @C_ID;
+		]]>
+	</UpdateDailyCutData>
+	<DeleteDailyCutData>
+		<![CDATA[
+			DELETE FROM ct_db.dailycut
+			WHERE C_ID = @C_ID;
+		]]>
+	</DeleteDailyCutData>
+	<!--////////////////////////// All Daily Saving Info Querys Details //////////////////////////////////////////--> 
+	<AddDailySavingInfo>
+		<![CDATA[
+			INSERT INTO ct_db.dailysaving (DS_ID, DS_Date, DS_FPAmount, DS_SPAmount, DS_TPAmount, NotTaken, DS_Data, DS_InBankDate, DS_Insrt_Person)
+			VALUES (@DS_ID, @DS_Date, @DS_FPAmount, @DS_SPAmount, @DS_TPAmount, @NotTaken, @DS_Data, @DS_InBankDate, @DS_Insrt_Person);
+		]]>
+	</AddDailySavingInfo>
+	<GetDailySavingData>
+		<![CDATA[
+			SELECT * FROM ct_db.dailysaving;
+		]]>
+	</GetDailySavingData>
+	<GetDailySavingIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.dailysaving
+			WHERE DS_ID = @DS_ID;
+		]]>
+	</GetDailySavingIDData>
+	<UpdateDailySavingData>
+		<![CDATA[
+			UPDATE ct_db.dailysaving
+			SET	DS_FPAmount = @DS_FPAmount,
+				DS_SPAmount = @DS_SPAmount,
+				DS_TPAmount = @DS_TPAmount,
+				NotTaken = @NotTaken,			
+				DS_Updt_Person = @DS_Updt_Person				
+			WHERE DS_ID = @DS_ID;
+		]]>
+	</UpdateDailySavingData>
+	<DeleteDailySavingData>
+		<![CDATA[
+			UPDATE ct_db.dailysaving
+			SET DS_Data = @DS_Data,
+				DS_InBankDate = @DS_InBankDate,				
+				DS_Del_Person = @DS_Del_Person	
+			WHERE DS_ID = @DS_ID;
+		]]>
+	</DeleteDailySavingData>
+	<DeleteResonDailySavingData>
+		<![CDATA[
+			DELETE FROM ct_db.dailysaving
+			WHERE DS_ID = @DS_ID;
+		]]>
+	</DeleteResonDailySavingData>
+	<!--////////////////////////// All Given Info Querys Details //////////////////////////////////////////-->
+	<AddGivenInfo>
+		<![CDATA[
+			INSERT INTO ct_db.given (InGiven, Total_Given, Given_To, ThroughBy_Given, Given_Date, Remarks_Given, GDT_V, GDT_V_Date, DDT_V_Date, G_Insrt_Person)
+			VALUES (@InGiven, @Total_Given, @Given_To, @ThroughBy_Given, @Given_Date, @Remarks_Given, @GDT_V, @GDT_V_Date, @DDT_V_Date, @G_Insrt_Person);
+		]]>
+	</AddGivenInfo>
+	<GetGivenData>
+		<![CDATA[
+			SELECT * FROM ct_db.given;
+		]]>
+	</GetGivenData>
+	<GetGivenIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.given
+			WHERE InGiven = @InGiven;
+		]]>
+	</GetGivenIDData>
+	<UpdateGivenData>
+		<![CDATA[
+			UPDATE ct_db.given
+			SET 
+				Total_Given = @Total_Given,
+				Given_To = @Given_To,
+				ThroughBy_Given = @ThroughBy_Given,
+				Given_Date = @Given_Date,
+				Remarks_Given = @Remarks_Given,				
+				GDT_V_Date = @GDT_V_Date,
+				DDT_V_Date = @DDT_V_Date,
+				G_Updt_Person = @G_Updt_Person
+			WHERE InGiven = @InGiven;
+		]]>
+	</UpdateGivenData>
+	<DeleteGivenData>
+		<![CDATA[
+			UPDATE ct_db.given
+			SET GDT_V = @GDT_V,
+				GDT_V_Date = @GDT_V_Date,
+				DDT_V_Date = @DDT_V_Date,
+				G_Del_Person = @G_Del_Person
+			WHERE InGiven = @InGiven;
+		]]>
+	</DeleteGivenData>
+	<DeleteResonGivenData>
+		<![CDATA[		
+			DELETE FROM ct_db.given
+			WHERE InGiven = @InGiven;
+		]]>
+	</DeleteResonGivenData>
+	<!--////////////////////////// All Images Info Querys Details //////////////////////////////////////////-->
+	<AddImagesInfo>
+		<![CDATA[
+			INSERT INTO ct_db.images (Img_ID, ImageData)
+			VALUES (@Img_ID, @ImageData);
+		]]>
+	</AddImagesInfo>
+	<GetImagesData>
+		<![CDATA[
+			SELECT * FROM ct_db.images;
+		]]>
+	</GetImagesData>
+	<GetImagesIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.images
+			WHERE Img_ID = @Img_ID;
+		]]>
+	</GetImagesIDData>
+	<UpdateImagesData>
+		<![CDATA[
+			UPDATE ct_db.images
+			SET 
+				ImageData = @ImageData			
+			WHERE Img_ID = @Img_ID;
+		]]>
+	</UpdateImagesData>
+	<DeleteImagesData>
+		<![CDATA[
+			DELETE FROM ct_db.images
+			WHERE Img_ID = @Img_ID;
+		]]>
+	</DeleteImagesData>
+	<!--////////////////////////// All Installment Info Querys Details //////////////////////////////////////////-->
+	<AddInstallmentInfo>
+		<![CDATA[
+			INSERT INTO ct_db.installment (I_ID, I_Date, Take_Total, Take_Anot, Take_Mine, Take_Data, InsPerMonth, PerMonthPay, InsPay, InsPay_Date, I_Insrt_Person)
+			VALUES (@I_ID, @I_Date, @Take_Total, @Take_Anot, @Take_Mine, @Take_Data, @InsPerMonth, @PerMonthPay, @InsPay, @InsPay_Date, @I_Insrt_Person;
+		]]>
+	</AddInstallmentInfo>
+	<GetInstallmentData>
+		<![CDATA[
+			SELECT * FROM ct_db.installment;
+		]]>
+	</GetInstallmentData>
+	<GetInstallmentIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.installment
+			WHERE I_ID = @I_ID;
+		]]>
+	</GetInstallmentIDData>
+	<UpdateInstallmentData>
+		<![CDATA[
+			UPDATE ct_db.installment
+			SET I_Date = @I_Date,
+				Take_Total = @Take_Total,
+				Take_Anot = @Take_Anot,
+				Take_Mine = @Take_Mine,
+				Take_Data = @Take_Data,
+				InsPerMonth = @InsPerMonth,
+				PerMonthPay = @PerMonthPay,
+				InsPay = @InsPay,
+				InsPay_Date = @InsPay_Date,
+				I_Insrt_Person = @I_Insrt_Person,
+				I_Updt_Person  = @I_Updt_Person, 
+				I_Del_Person = @I_Del_Person
+			WHERE I_ID = @I_ID;
+		]]>
+	</UpdateInstallmentData>
+	<DeleteInstallmentData>
+		<![CDATA[
+			DELETE FROM ct_db.installment
+			WHERE B_ID = @B_ID;
+		]]>
+	</DeleteInstallmentData>
 	<!--////////////////////////// All Market Info Querys Details //////////////////////////////////////////-->
 	<AddMarketInfo>
 		<![CDATA[
@@ -76,4 +352,465 @@
 			WHERE M_ID = @M_ID;
 		]]>
 	</DeleteMarketData>
+	<!--////////////////////////// All Market Memo Info Querys Details //////////////////////////////////////////-->
+	<AddMarketMemoInfo>
+		<![CDATA[
+			INSERT INTO ct_db.marketmemos (Mem_ID, Mem_Date, R_InvTK, C_InvTK, Giv_TK, Ret_TK, I_N01, I_N02, I_N03, I_N04, I_N05, I_N06, I_N07, I_N08, I_N09, I_N10, I_N11, I_N12, I_N13, I_N14, I_N15, I_N16, I_P01, I_P02, I_P03, I_P04, I_P05, I_P06, I_P07, I_P08, I_P09, I_P10, I_P11, I_P12, I_P13, I_P14, I_P15, I_P16, I_Q01, I_Q02, I_Q03, I_Q04, I_Q05, I_Q06, I_Q07, I_Q08, I_Q09, I_Q10, I_Q11, I_Q12, I_Q13, I_Q14, I_Q15, I_Q16, I_ST01, I_ST02, I_ST03, I_ST04, I_ST05, I_ST06, I_ST07, I_ST08, I_ST09, I_ST10, I_ST11, I_ST12, I_ST13, I_ST14, I_ST15, I_ST16, R_Inv01, R_Inv02, R_Inv03, R_Inv04, R_Inv05, R_Inv06, R_Inv07, R_Inv08, R_Inv09, R_Inv10, R_Inv11, R_Inv12, R_Inv13, R_Inv14, R_Inv15, R_Inv16, R_Inv17, R_Inv18, R_Inv19, R_Inv20, R_Inv21, R_Inv22, R_Inv23, R_Inv24, Mem_Insrt_Person)
+			VALUES (@Mem_ID, @Mem_Date, @R_InvTK, @C_InvTK, @Giv_TK, @Ret_TK, @I_N01, @I_N02, @I_N03, @I_N04, @I_N05, @I_N06, @I_N07, @I_N08, @I_N09, @I_N10, @I_N11, @I_N12, @I_N13, @I_N14, @I_N15, @I_N16, @I_P01, @I_P02, @I_P03, @I_P04, @I_P05, @I_P06, @I_P07, @I_P08, @I_P09, @I_P10, @I_P11, @I_P12, @I_P13, @I_P14, @I_P15, @I_P16, @I_Q01, @I_Q02, @I_Q03, @I_Q04, @I_Q05, @I_Q06, @I_Q07, @I_Q08, @I_Q09, @I_Q10, @I_Q11, @I_Q12, @I_Q13, @I_Q14, @I_Q15, @I_Q16, @I_ST01, @I_ST02, @I_ST03, @I_ST04, @I_ST05, @I_ST06, @I_ST07, @I_ST08, @I_ST09, @I_ST10, @I_ST11, @I_ST12, @I_ST13, @I_ST14, @I_ST15, @I_ST16, @R_Inv01, @R_Inv02, @R_Inv03, @R_Inv04, @R_Inv05, @R_Inv06, @R_Inv07, @R_Inv08, @R_Inv09, @R_Inv10, @R_Inv11, @R_Inv12, @R_Inv13, @R_Inv14, @R_Inv15, @R_Inv16, @R_Inv17, @R_Inv18, @R_Inv19, @R_Inv20, @R_Inv21, @R_Inv22, @R_Inv23, @R_Inv24, @Mem_Insrt_Person);
+		]]>
+	</AddMarketMemoInfo>
+	<GetMarketMemoData>
+		<![CDATA[
+			SELECT * FROM ct_db.marketmemos;
+		]]>
+	</GetMarketMemoData>
+	<GetMarketMemoIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.marketmemos
+			WHERE Mem_ID = @Mem_ID;
+		]]>
+	</GetMarketMemoIDData>
+	<UpdateMarketMemoData>
+		<![CDATA[
+			UPDATE ct_db.marketmemos
+			SET R_InvTK = @R_InvTK,
+				C_InvTK = @C_InvTK,
+				Giv_TK = @Giv_TK,
+				Ret_TK = @Ret_TK,
+				I_N01 = @I_N01,
+				I_N02 = @I_N02,
+				I_N03 = @I_N03,
+				I_N04 = @I_N04,
+				I_N05 = @I_N05,
+				I_N06 = @I_N06,
+				I_N07 = @I_N07,
+				I_N08 = @I_N08,
+				I_N09 = @I_N09,
+				I_N10 = @I_N10,
+				I_N11 = @I_N11,
+				I_N12 = @I_N12,
+				I_N13 = @I_N13,
+				I_N14 = @I_N14,
+				I_N15 = @I_N15,
+				I_N16 = @I_N16,
+				I_P01 = @I_P01,
+				I_P02 = @I_P02,
+				I_P03 = @I_P03,
+				I_P04 = @I_P04,
+				I_P05 = @I_P05,
+				I_P06 = @I_P06,
+				I_P07 = @I_P07,
+				I_P08 = @I_P08,
+				I_P09 = @I_P09,
+				I_P10 = @I_P10,
+				I_P11 = @I_P11,
+				I_P12 = @I_P12,
+				I_P13 = @I_P13,
+				I_P14 = @I_P14,
+				I_P15 = @I_P15,
+				I_P16 = @I_P16,
+				I_Q01 = @I_Q01,
+				I_Q02 = @I_Q02,
+				I_Q03 = @I_Q03,
+				I_Q04 = @I_Q04,
+				I_Q05 = @I_Q05,
+				I_Q06 = @I_Q06,
+				I_Q07 = @I_Q07,
+				I_Q08 = @I_Q08,
+				I_Q09 = @I_Q09,
+				I_Q10 = @I_Q10,
+				I_Q11 = @I_Q11,
+				I_Q12 = @I_Q12,
+				I_Q13 = @I_Q13,
+				I_Q14 = @I_Q14,
+				I_Q15 = @I_Q15,
+				I_Q16 = @I_Q16,
+				I_ST01 = @I_ST01,
+				I_ST02 = @I_ST02,
+				I_ST03 = @I_ST03,
+				I_ST04 = @I_ST04,
+				I_ST05 = @I_ST05,
+				I_ST06 = @I_ST06,
+				I_ST07 = @I_ST07,
+				I_ST08 = @I_ST08,
+				I_ST09 = @I_ST09,
+				I_ST10 = @I_ST10,
+				I_ST11 = @I_ST11,
+				I_ST12 = @I_ST12,
+				I_ST13 = @I_ST13,
+				I_ST14 = @I_ST14,
+				I_ST15 = @I_ST15,
+				I_ST16 = @I_ST16,
+				R_Inv01 = @R_Inv01,
+				R_Inv02 = @R_Inv02,
+				R_Inv03 = @R_Inv03,
+				R_Inv04 = @R_Inv04,
+				R_Inv05 = @R_Inv05,
+				R_Inv06 = @R_Inv06,
+				R_Inv07 = @R_Inv07,
+				R_Inv08 = @R_Inv08,
+				R_Inv09 = @R_Inv09,
+				R_Inv10 = @R_Inv10,
+				R_Inv11 = @R_Inv11,
+				R_Inv12 = @R_Inv12,
+				R_Inv13 = @R_Inv13,
+				R_Inv14 = @R_Inv14,
+				R_Inv15 = @R_Inv15,
+				R_Inv16 = @R_Inv16,
+				R_Inv17 = @R_Inv17,
+				R_Inv18 = @R_Inv18,
+				R_Inv19 = @R_Inv19,
+				R_Inv20 = @R_Inv20,
+				R_Inv21 = @R_Inv21,
+				R_Inv22 = @R_Inv22,
+				R_Inv23 = @R_Inv23,
+				R_Inv24 = @R_Inv24,				
+				Mem_Updt_Person = @Mem_Updt_Person				
+			WHERE Mem_ID = @Mem_ID;
+		]]>
+	</UpdateMarketMemoData>
+	<DeleteMarketMemoData>
+		<![CDATA[
+			INSERT INTO ct_db.marketmemosdel SELECT * FROM ct_db.marketmemos
+			DELETE FROM ct_db.marketmemos
+			WHERE Mem_ID = @Mem_ID;
+		]]>
+	</DeleteMarketMemoData>
+	<!--////////////////////////// All Monthly Taken Info Querys Details //////////////////////////////////////////-->
+	<AddMonthlyTakenInfo>
+		<![CDATA[
+			INSERT INTO ct_db.monthlytaken (MT_ID, MT_Date, MT_TotalTK, MT_Giv_TK, MT_LS_TK, T01, T02, T03, T04, T05, T06, T07, T08, T09, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34, T35, T36, T37, T38, T39, T40, T41, T42, T43, T44, T45, T46, T47, T48, T49, T50, T51, T52, T53, T54, T55, T56, T57, T58, T59, T60, T61, T62, T63, T64, T65, T66, T67, T68, T69, T70, T71, T72, T73, T74, T75, T76, T77, T78, T79, T80, T81, T82, T83, T84, T85, T86, T87, T88, T89, T90, T91, T92, T93, T94, T95, T96, T97, T98, T99, T100, T101, T102, T103, T104, T105, T106, T107, T108, T109, T110, T111, T112, T113, T114, T115, T116, T117, T118, T119, T120, MTDT_V, MT_Insrt_Person)
+			VALUES (@MT_ID, @MT_Date, @MT_TotalTK, @MT_Giv_TK, @MT_LS_TK, @T01, @T02, @T03, @T04, @T05, @T06, @T07, @T08, @T09, @T10, @T11, @T12, @T13, @T14, @T15, @T16, @T17, @T18, @T19, @T20, @T21, @T22, @T23, @T24, @T25, @T26, @T27, @T28, @T29, @T30, @T31, @T32, @T33, @T34, @T35, @T36, @T37, @T38, @T39, @T40, @T41, @T42, @T43, @T44, @T45, @T46, @T47, @T48, @T49, @T50, @T51, @T52, @T53, @T54, @T55, @T56, @T57, @T58, @T59, @T60, @T61, @T62, @T63, @T64, @T65, @T66, @T67, @T68, @T69, @T70, @T71, @T72, @T73, @T74, @T75, @T76, @T77, @T78, @T79, @T80, @T81, @T82, @T83, @T84, @T85, @T86, @T87, @T88, @T89, @T90, @T91, @T92, @T93, @T94, @T95, @T96, @T97, @T98, @T99, @T100, @T101, @T102, @T103, @T104, @T105, @T106, @T107, @T108, @T109, @T110, @T111, @T112, @T113, @T114, @T115, @T116, @T117, @T118, @T119, @T120, @MTDT_V, @MT_Insrt_Person);
+		]]>
+	</AddMonthlyTakenInfo>
+	<GetMonthlyTakenData>
+		<![CDATA[
+			SELECT * FROM ct_db.monthlytaken;
+		]]>
+	</GetMonthlyTakenData>
+	<GetMonthlyTakenIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.monthlytaken
+			WHERE MT_ID = @MT_ID;
+		]]>
+	</GetMonthlyTakenIDData>
+	<UpdateMonthlyTakenData>
+		<![CDATA[
+			UPDATE ct_db.monthlytaken
+			SET MT_TotalTK = @MT_TotalTK,
+				MT_Giv_TK = @MT_Giv_TK,
+				MT_LS_TK = @MT_LS_TK,
+				T01 = @T01,
+				T02 = @T02,
+				T03 = @T03,
+				T04 = @T04,
+				T05 = @T05,
+				T06 = @T06,
+				T07 = @T07,
+				T08 = @T08,
+				T09 = @T09,
+				T10 = @T10,
+				T11 = @T11,
+				T12 = @T12,
+				T13 = @T13,
+				T14 = @T14,
+				T15 = @T15,
+				T16 = @T16,
+				T17 = @T17,
+				T18 = @T18,
+				T19 = @T19,
+				T20 = @T20,
+				T21 = @T21,
+				T22 = @T22,
+				T23 = @T23,
+				T24 = @T24,
+				T25 = @T25,
+				T26 = @T26,
+				T27 = @T27,
+				T28 = @T28,
+				T29 = @T29,
+				T30 = @T30,
+				T31 = @T31,
+				T32 = @T32,
+				T33 = @T33,
+				T34 = @T34,
+				T35 = @T35,
+				T36 = @T36,
+				T37 = @T37,
+				T38 = @T38,
+				T39 = @T39,
+				T40 = @T40,
+				T41 = @T41,
+				T42 = @T42,
+				T43 = @T43,
+				T44 = @T44,
+				T45 = @T45,
+				T46 = @T46,
+				T47 = @T47,
+				T48 = @T48,
+				T49 = @T49,
+				T50 = @T50,
+				T51 = @T51,
+				T52 = @T52,
+				T53 = @T53,
+				T54 = @T54,
+				T55 = @T55,
+				T56 = @T56,
+				T57 = @T57,
+				T58 = @T58,
+				T59 = @T59,
+				T60 = @T60,
+				T61 = @T61,
+				T62 = @T62,
+				T63 = @T63,
+				T64 = @T64,
+				T65 = @T65,
+				T66 = @T66,
+				T67 = @T67,
+				T68 = @T68,
+				T69 = @T69,
+				T70 = @T70,
+				T71 = @T71,
+				T72 = @T72,
+				T73 = @T73,
+				T74 = @T74,
+				T75 = @T75,
+				T76 = @T76,
+				T77 = @T77,
+				T78 = @T78,
+				T79 = @T79,
+				T80 = @T80,
+				T81 = @T81,
+				T82 = @T82,
+				T83 = @T83,
+				T84 = @T84,
+				T85 = @T85,
+				T86 = @T86,
+				T87 = @T87,
+				T88 = @T88,
+				T89 = @T89,
+				T90 = @T90,
+				T91 = @T91,
+				T92 = @T92,
+				T93 = @T93,
+				T94 = @T94,
+				T95 = @T95,
+				T96 = @T96,
+				T97 = @T97,
+				T98 = @T98,
+				T99 = @T99,
+				T100 = @T100,
+				T101 = @T101,
+				T102 = @T102,
+				T103 = @T103,
+				T104 = @T104,
+				T105 = @T105,
+				T106 = @T106,
+				T107 = @T107,
+				T108 = @T108,
+				T109 = @T109,
+				T110 = @T110,
+				T111 = @T111,
+				T112 = @T112,
+				T113 = @T113,
+				T114 = @T114,
+				T115 = @T115,
+				T116 = @T116,
+				T117 = @T117,
+				T118 = @T118,
+				T119 = @T119,
+				T120 = @T120,
+				MTDT_V = @MTDT_V,				
+				MT_Updt_Person = @MT_Updt_Person				
+			WHERE MT_ID = @MT_ID;
+		]]>
+	</UpdateMonthlyTakenData>
+	<DeleteMonthlyTakenData>
+		<![CDATA[
+			DELETE FROM ct_db.monthlytaken
+			WHERE MT_ID = @MT_ID;
+		]]>
+	</DeleteMonthlyTakenData>
+	<!--////////////////////////// All Saving Info Querys Details //////////////////////////////////////////-->
+	<AddSavingInfo>
+		<![CDATA[
+			INSERT INTO ct_db.saving (InSaving, Saving_Amount, Saving_To, ThroughBy_Saving, Saving_Date, Remarks_Saving, SDT_V, SDT_V_Date, DDT_V_Date, Saving_Bank, S_Insrt_Person)
+			VALUES (@InSaving, @Saving_Amount, @Saving_To, @ThroughBy_Saving, @Saving_Date, @Remarks_Saving, @SDT_V, @SDT_V_Date, @DDT_V_Date, @Saving_Bank, @S_Insrt_Person);
+		]]>
+	</AddSavingInfo>
+	<GetSavingData>
+		<![CDATA[
+			SELECT * FROM ct_db.saving;
+		]]>
+	</GetSavingData>
+	<GetSavingIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.saving
+			WHERE InSaving = @InSaving;
+		]]>
+	</GetSavingIDData>
+	<UpdateSavingData>
+		<![CDATA[
+			UPDATE ct_db.saving
+			SET Saving_Amount = @Saving_Amount,
+				Saving_To = @Saving_To,
+				ThroughBy_Saving = @ThroughBy_Saving,
+				Saving_Date = @Saving_Date,
+				Remarks_Saving = @Remarks_Saving,
+				SDT_V = @SDT_V,
+				SDT_V_Date = @SDT_V_Date,
+				DDT_V_Date = @DDT_V_Date,
+				Saving_Bank = @Saving_Bank,				
+				S_Updt_Person = @S_Updt_Person				
+			WHERE InSaving = @InSaving;
+		]]>
+	</UpdateSavingData>
+	<DeleteSavingData>
+		<![CDATA[
+			UPDATE ct_db.saving
+			SET Saving_Amount = @Saving_Amount,
+				Saving_To = @Saving_To,
+				ThroughBy_Saving = @ThroughBy_Saving,
+				Saving_Date = @Saving_Date,
+				Remarks_Saving = @Remarks_Saving,
+				SDT_V = @SDT_V,
+				SDT_V_Date = @SDT_V_Date,
+				DDT_V_Date = @DDT_V_Date,
+				Saving_Bank = @Saving_Bank,				
+				S_Del_Person = @S_Del_Person
+			WHERE InSaving = @InSaving;
+		]]>
+	</DeleteSavingData>
+	<DeleteResonSavingData>
+		<![CDATA[
+			DELETE FROM ct_db.saving
+			WHERE InSaving = @InSaving;
+		]]>
+	</DeleteResonSavingData>
+	<!--////////////////////////// All TariffAmt Info Querys Details //////////////////////////////////////////-->
+	<AddTariffAmtInfo>
+		<![CDATA[
+			INSERT INTO ct_db.tariffamt (InExpense, Expense_Amount, Expense_To, ThroughBy_Expense, Expense_Date, Remarks_Expense, EDT_V, EDT_V_Date, DDT_V_Date, E_Insrt_Person)
+			VALUES (@InExpense, @Expense_Amount, @Expense_To, @ThroughBy_Expense, @Expense_Date, @Remarks_Expense, @EDT_V, @EDT_V_Date, @DDT_V_Date, @E_Insrt_Person);
+		]]>
+	</AddTariffAmtInfo>
+	<GetTariffAmtData>
+		<![CDATA[
+			SELECT * FROM ct_db.tariffamt;
+		]]>
+	</GetTariffAmtData>
+	<GetTariffAmtIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.tariffamt
+			WHERE InExpense = @InExpense;
+		]]>
+	</GetTariffAmtIDData>
+	<UpdateTariffAmtData>
+		<![CDATA[
+			UPDATE ct_db.tariffamt
+			SET InExpense = @InExpense,
+				Expense_Amount = @Expense_Amount,
+				Expense_To = @Expense_To,
+				ThroughBy_Expense = @ThroughBy_Expense,
+				Expense_Date = @Expense_Date,
+				Remarks_Expense = @Remarks_Expense,
+				EDT_V = @EDT_V,
+				EDT_V_Date = @EDT_V_Date,
+				DDT_V_Date = @DDT_V_Date,
+				E_Insrt_Person = @E_Insrt_Person,
+				E_Updt_Person = @E_Updt_Person,
+				E_Del_Person = @E_Del_Person
+			WHERE InExpense = @InExpense;
+		]]>
+	</UpdateTariffAmtData>
+	<DeleteTariffAmtData>
+		<![CDATA[
+			DELETE FROM ct_db.tariffamt
+			WHERE InExpense = @InExpense;
+		]]>
+	</DeleteTariffAmtData>
+	<!--////////////////////////// All Taken Info Querys Details //////////////////////////////////////////-->
+	<AddTakenInfo>
+		<![CDATA[
+			INSERT INTO ct_db.teken (InTake, Total_Take, Take_To, ThroughBy_Take, Take_Date, Remarks_Take, TDT_V, TDT_V_Date, DDT_V_Date, T_Insrt_Person)
+			VALUES (@InTake, @Total_Take, @Take_To, @ThroughBy_Take, @Take_Date, @Remarks_Take, @TDT_V, @TDT_V_Date, @DDT_V_Date, @T_Insrt_Person);
+		]]>
+	</AddTakenInfo>
+	<GetTakenData>
+		<![CDATA[
+			SELECT * FROM ct_db.teken;
+		]]>
+	</GetTakenData>
+	<GetTakenIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.teken
+			WHERE InTake = @InTake;
+		]]>
+	</GetTakenIDData>
+	<UpdateTakenData>
+		<![CDATA[
+			UPDATE ct_db.teken
+			SET InTake = @InTake,
+				Total_Take = @Total_Take,
+				Take_To = @Take_To,
+				ThroughBy_Take = @ThroughBy_Take,
+				Take_Date = @Take_Date,
+				Remarks_Take = @Remarks_Take,
+				TDT_V = @TDT_V,
+				TDT_V_Date = @TDT_V_Date,
+				DDT_V_Date = @DDT_V_Date,
+				T_Insrt_Person = @T_Insrt_Person,
+				T_Updt_Person = @T_Updt_Person,
+				T_Del_Person = @T_Del_Person
+			WHERE InTake = @InTake;
+		]]>
+	</UpdateTakenData>
+	<DeleteTakenData>
+		<![CDATA[
+			DELETE FROM ct_db.teken
+			WHERE InTake = @InTake;
+		]]>
+	</DeleteTakenData>
+	<!--////////////////////////// All Undated Info Querys Details //////////////////////////////////////////-->
+	<AddUndatedInfo>
+		<![CDATA[
+			INSERT INTO ct_db.unrated (InUnrated, Unrated_Amount, Unrated_To, ThroughBy_Unrated, Unrated_Date, Remarks_Unrated, UDT_V, UDT_V_Date, DDT_V_Date, U_Insrt_Person, U_Updt_Person, U_Del_Person)
+			VALUES (@InUnrated, @Unrated_Amount, @Unrated_To, @ThroughBy_Unrated, @Unrated_Date, @Remarks_Unrated, @UDT_V, @UDT_V_Date, @DDT_V_Date, @U_Insrt_Person, @U_Updt_Person, @U_Del_Person);
+		]]>
+	</AddUndatedInfo>
+	<GetUndatedData>
+		<![CDATA[
+			SELECT * FROM ct_db.unrated;
+		]]>
+	</GetUndatedData>
+	<GetUndatedIDData>
+		<![CDATA[
+			SELECT * FROM ct_db.unrated
+			WHERE InUnrated = @InUnrated;
+		]]>
+	</GetUndatedIDData>
+	<UpdateUndatedData>
+		<![CDATA[
+			UPDATE ct_db.unrated
+			SET InUnrated = @InUnrated,
+				Unrated_Amount = @Unrated_Amount,
+				Unrated_To = @Unrated_To,
+				ThroughBy_Unrated = @ThroughBy_Unrated,
+				Unrated_Date = @Unrated_Date,
+				Remarks_Unrated = @Remarks_Unrated,
+				UDT_V = @UDT_V,
+				UDT_V_Date = @UDT_V_Date,
+				DDT_V_Date = @DDT_V_Date,
+				U_Insrt_Person = @U_Insrt_Person,
+				U_Updt_Person = @U_Updt_Person,
+				U_Del_Person = @U_Del_Person
+			WHERE InUnrated = @InUnrated;
+		]]>
+	</UpdateUndatedData>
+	<DeleteUndatedData>
+		<![CDATA[
+			DELETE FROM ct_db.unrated
+			WHERE InUnrated = @InUnrated;
+		]]>
+	</DeleteUndatedData>
 </Queries>

@@ -10,37 +10,37 @@ namespace CT_Web.Service_Layer
 {
     public class MarketMemoSL : IMarketMemoSL
     {
-        public readonly IMarketMemoRL _marketRL;
+        public readonly IMarketMemoRL _marketMemoRL;
         public readonly ILogger<MarketMemoSL> _logger;
-        public MarketMemoSL(IMarketMemoRL marketRL, ILogger<MarketMemoSL> logger)
+        public MarketMemoSL(IMarketMemoRL marketMemoRL, ILogger<MarketMemoSL> logger)
         {
-            _marketRL = marketRL;
+            _marketMemoRL = marketMemoRL;
             _logger = logger;
         }
-        public async Task<Market> ICreateMarketRecordSL(Market market)
+        public async Task<MarketMemos> ICreateMarketMemoRecordSL(MarketMemos marketMemos)
         {
             _logger.LogInformation($"Calling Service Layer");
-            return await _marketRL.ICreateMarketRecordRL(market);
+            return await _marketMemoRL.ICreateMarketMemoRecordRL(marketMemos);
         }
-        public async Task<Market> IReadMarketRecordSL()
+        public async Task<MarketMemos> IReadMarketMemoRecordSL()
         {
             _logger.LogInformation($"Calling Service Layer");
-            return await _marketRL.IReadMarketRecordRL();
+            return await _marketMemoRL.IReadMarketMemoRecordRL();
         }
-        public async Task<Market> IReadMarketIDRecordSL(Market market)
+        public async Task<MarketMemos> IReadMarketMemoIDRecordSL(MarketMemos marketMemos)
         {
             _logger.LogInformation($"Calling Service Layer");
-            return await _marketRL.IReadMarketIDRecordRL(market);
+            return await _marketMemoRL.IReadMarketMemoIDRecordRL(marketMemos);
         }
-        public async Task<Market> IUpdateMarketRecordSL(Market market)
+        public async Task<MarketMemos> IUpdateMarketMemoRecordSL(MarketMemos marketMemos)
         {
             _logger.LogInformation($"Calling Service Layer");
-            return await _marketRL.IUpdateMarketRecordRL(market);
+            return await _marketMemoRL.IUpdateMarketMemoRecordRL(marketMemos);
         }
-        public async Task<Market> IDeleteMarketRecordSL(Market market)
+        public async Task<MarketMemos> IDeleteMarketMemoRecordSL(MarketMemos marketMemos)
         {
             _logger.LogInformation($"Calling Service Layer");
-            return await _marketRL.IDeleteMarketRecordRL(market);
+            return await _marketMemoRL.IDeleteMarketMemoRecordRL(marketMemos);
         }
     }
 }

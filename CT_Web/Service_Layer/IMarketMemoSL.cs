@@ -8,15 +8,10 @@ namespace CT_Web.Service_Layer
 {
     public interface IMarketMemoSL
     {
-        public Task<Market> ICreateMarketRecordSL(Market market);
-        public Task<Market> IReadMarketRecordSL();
-        public Task<Market> IReadMarketIDRecordSL(Market market);
-        public Task<Market> IUpdateMarketRecordSL(Market market);
-        public Task<Market> IDeleteMarketRecordSL(Market market);
-
-
-
-
-
+        public Task<MarketMemos> ICreateMarketMemoRecordSL(MarketMemos marketMemos);
+        public Task<MarketMemos> IReadMarketMemoRecordSL();
+        public Task<MarketMemos> IReadMarketMemoIDRecordSL(MarketMemos marketMemos);
+        public Task<MarketMemos> IUpdateMarketMemoRecordSL(MarketMemos marketMemos);
+        public Task<MarketMemos> IDeleteMarketMemoRecordSL(MarketMemos marketMemos);
     }
 }

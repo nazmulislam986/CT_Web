@@ -24,7 +24,7 @@ namespace CT_Web.Controllers
             _logger = logger;
         }
 
-        // GET: api/<MarketMemoController>
+        // GET: api/<MarketController>
         [HttpGet]
         [Route("GetMarketRecord")]
         public async Task<IActionResult> ReadMarketRecord()
@@ -49,7 +49,7 @@ namespace CT_Web.Controllers
             return Ok(new { IsSuccess = respose.IsSuccess, Message = respose.Message, Data = respose.MarketDataList });
         }
 
-        // GET api/<MarketMemoController>/5
+        // GET api/<MarketController>/5
         [HttpPost]
         [Route("GetMarketIDRecord")]
         public async Task<IActionResult> ReadMarketIDRecord(Market market)
@@ -68,13 +68,13 @@ namespace CT_Web.Controllers
             {
                 respose.IsSuccess = false;
                 respose.Message = ex.Message;
-                _logger.LogError($"Get Market Record Error Message : {ex.Message}");
+                _logger.LogError($"Get Market ID Record Error Message : {ex.Message}");
                 return BadRequest(new { IsSuccess = respose.IsSuccess, Message = respose.Message });
             }
             return Ok(new { IsSuccess = respose.IsSuccess, Message = respose.Message, Data = respose.MarketDataList });
         }
 
-        // POST api/<MarketMemoController>
+        // POST api/<MarketController>
         [HttpPost]
         [Route("CreateMarketRecord")]
         public async Task<IActionResult> CreateMarketRecord(Market market)
@@ -99,7 +99,7 @@ namespace CT_Web.Controllers
             return Ok(new { IsSuccess = respose.IsSuccess, Message = respose.Message });
         }
 
-        // PUT api/<MarketMemoController>/5
+        // PUT api/<MarketController>/5
         [HttpPut]
         [Route("UpdateMarketRecord")]
         public async Task<IActionResult> UpdateMarketRecord(Market market)
@@ -118,13 +118,13 @@ namespace CT_Web.Controllers
             {
                 respose.IsSuccess = false;
                 respose.Message = ex.Message;
-                _logger.LogError($"Create Market Record Error Message : {ex.Message}");
+                _logger.LogError($"Update Market Record Error Message : {ex.Message}");
                 return BadRequest(new { IsSuccess = respose.IsSuccess, Message = respose.Message });
             }
             return Ok(new { IsSuccess = respose.IsSuccess, Message = respose.Message });
         }
 
-        // DELETE api/<MarketMemoController>/5
+        // DELETE api/<MarketController>/5
         [HttpDelete]
         [Route("DeleteMarketRecord")]
         public async Task<IActionResult> DeleteMarketRecord(Market market)
@@ -143,7 +143,7 @@ namespace CT_Web.Controllers
             {
                 respose.IsSuccess = false;
                 respose.Message = ex.Message;
-                _logger.LogError($"Create Market Record Error Message : {ex.Message}");
+                _logger.LogError($"Delete Market Record Error Message : {ex.Message}");
                 return BadRequest(new { IsSuccess = respose.IsSuccess, Message = respose.Message });
             }
             return Ok(new { IsSuccess = respose.IsSuccess, Message = respose.Message });

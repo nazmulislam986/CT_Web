@@ -21,6 +21,7 @@ namespace CT_Web.Repository_Layer
             _logger = logger;
             _sqlConn = new MySqlConnection(_configuration["ConnectionStrings:connMySql"]);
         }
+
         public async Task<Market> ICreateMarketRecordRL(Market market)
         {
             _logger.LogInformation($"Calling Repository Layer");
@@ -76,7 +77,7 @@ namespace CT_Web.Repository_Layer
                 {
                     await _sqlConn.OpenAsync();
                 }
-                using (MySqlCommand cmd = new MySqlCommand(SqlQueries.ReadMarket, _sqlConn))
+                using (MySqlCommand cmd = new MySqlCommand(SqlQueries.GetMarket, _sqlConn))
                 {
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandTimeout = 180;
@@ -132,7 +133,7 @@ namespace CT_Web.Repository_Layer
                 {
                     await _sqlConn.OpenAsync();
                 }
-                using (MySqlCommand cmd = new MySqlCommand(SqlQueries.ReadMarketID, _sqlConn))
+                using (MySqlCommand cmd = new MySqlCommand(SqlQueries.GetMarketID, _sqlConn))
                 {
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandTimeout = 180;

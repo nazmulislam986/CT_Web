@@ -68,7 +68,7 @@ namespace CT_Web.Controllers
             {
                 respose.IsSuccess = false;
                 respose.Message = ex.Message;
-                _logger.LogError($"Get Market Record Error Message : {ex.Message}");
+                _logger.LogError($"Get Bike ID Record Error Message : {ex.Message}");
                 return BadRequest(new { IsSuccess = respose.IsSuccess, Message = respose.Message });
             }
             return Ok(new { IsSuccess = respose.IsSuccess, Message = respose.Message, Data = respose.BikeInfoList });
@@ -93,7 +93,7 @@ namespace CT_Web.Controllers
             {
                 respose.IsSuccess = false;
                 respose.Message = ex.Message;
-                _logger.LogError($"Create Market Record Error Message : {ex.Message}");
+                _logger.LogError($"Create Bike Record Error Message : {ex.Message}");
                 return BadRequest(new { IsSuccess = respose.IsSuccess, Message = respose.Message });
             }
             return Ok(new { IsSuccess = respose.IsSuccess, Message = respose.Message });
@@ -118,7 +118,7 @@ namespace CT_Web.Controllers
             {
                 respose.IsSuccess = false;
                 respose.Message = ex.Message;
-                _logger.LogError($"Create Market Record Error Message : {ex.Message}");
+                _logger.LogError($"Update Bike Record Error Message : {ex.Message}");
                 return BadRequest(new { IsSuccess = respose.IsSuccess, Message = respose.Message });
             }
             return Ok(new { IsSuccess = respose.IsSuccess, Message = respose.Message });
@@ -143,7 +143,7 @@ namespace CT_Web.Controllers
             {
                 respose.IsSuccess = false;
                 respose.Message = ex.Message;
-                _logger.LogError($"Create Market Record Error Message : {ex.Message}");
+                _logger.LogError($"Delete Bike Record Error Message : {ex.Message}");
                 return BadRequest(new { IsSuccess = respose.IsSuccess, Message = respose.Message });
             }
             return Ok(new { IsSuccess = respose.IsSuccess, Message = respose.Message });

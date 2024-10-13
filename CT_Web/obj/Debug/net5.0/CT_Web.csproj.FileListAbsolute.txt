@@ -139,7 +139,6 @@ D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\bin\Debug\net5.0\CT_Web.dep
 D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\bin\Debug\net5.0\CT_Web.runtimeconfig.json
 D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\bin\Debug\net5.0\CT_Web.runtimeconfig.dev.json
 D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\bin\Debug\net5.0\CT_Web.dll
-D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\bin\Debug\net5.0\ref\CT_Web.dll
 D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\bin\Debug\net5.0\CT_Web.pdb
 D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\bin\Debug\net5.0\BouncyCastle.Cryptography.dll
 D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\bin\Debug\net5.0\Google.Protobuf.dll
@@ -188,7 +187,6 @@ D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\obj\Debug\net5.0\CT_Web.csp
 D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\obj\Debug\net5.0\CT_Web.MvcApplicationPartsAssemblyInfo.cs
 D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\obj\Debug\net5.0\CT_Web.MvcApplicationPartsAssemblyInfo.cache
 D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\obj\Debug\net5.0\staticwebassets\CT_Web.StaticWebAssets.Manifest.cache
-D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\obj\Debug\net5.0\staticwebassets\CT_Web.StaticWebAssets.xml
 D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\obj\Debug\net5.0\scopedcss\bundle\CT_Web.styles.css
 D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\obj\Debug\net5.0\CT_Web.RazorTargetAssemblyInfo.cache
 D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\obj\Debug\net5.0\CT_Web.csproj.CopyComplete
@@ -196,3 +194,5 @@ D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\obj\Debug\net5.0\CT_Web.dll
 D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\obj\Debug\net5.0\ref\CT_Web.dll
 D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\obj\Debug\net5.0\CT_Web.pdb
 D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\obj\Debug\net5.0\CT_Web.genruntimeconfig.cache
+D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\bin\Debug\net5.0\ref\CT_Web.dll
+D:\MVS_2019_Project\TeamProject\CT_Web\CT_Web\CT_Web\obj\Debug\net5.0\staticwebassets\CT_Web.StaticWebAssets.xml
